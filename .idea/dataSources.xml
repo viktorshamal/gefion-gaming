@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3817322824">
+  <component name="DataSourceManagerImpl" format="xml" hash="3275563943">
     <data-source source="LOCAL" name="Rails gaming: development" uuid="526527a5-31db-4a81-b563-6fb9792186e9">
       <driver-ref>sqlite.xerial</driver-ref>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Viktor\RubymineProjects\gaming\db\development.sqlite3</jdbc-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:project_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails gaming: test" uuid="9a474f20-1b6c-4f7e-a8f6-1025c5b734c0">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:project_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails gaming: production" uuid="3a9eda65-65cf-466f-acbb-11302fbd94c7">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:project_production</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails gaming: cucumber" uuid="326d0e08-8dfb-4b95-b924-cf0c9101940f">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:project_test</jdbc-url>
       <libraries />
     </data-source>
   </component>

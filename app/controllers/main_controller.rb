@@ -4,11 +4,21 @@ class MainController < ApplicationController
 
     Koala.config.api_version = "v2.0"
 
-    @graph = Koala::Facebook::API.new("CAACEdEose0cBAGsGKwAy4XfgfqXwJqXTHVHj6X1ZCtpUXcGBENZAr7ArCINobPxWIZAPP1TkiYesWvyMcKOegbAr53oivMlTuCAZBG7J7KcsiWWAbiPkZBizm10zuBcHHMGQRB7GL60PRPWPb0dJO2zdYDTqoEUruRcUQBDaTiZANLXB77BT21yZCfgOfVsmkX9oXKanGzSOgZDZD")
+    if current_user
 
-    #profile = @graph.get_object("me")
+    end
 
-    #@name = profile.name
+    @graph = Koala::Facebook::API.new("CAADZCZAhnZAX9sBAOB2ZADLrZCgnfG0fsY5DpQO05ycgRdOmPXYoJyjPIEx5FSBsQpCeRjigHjDD4drNzOz8IDJTQlL9uPjvmkKPlUY7vpeqHYNqj1syB5krUHQPEgQPjmZBP8BCEQiQVyIWOXSNj8IPBbk07P8IjKpiFco6HFFAyu1qD5VPUN6bEBYFZA2pmgZD")
+
+    events = @graph.get_connections("gefiongaming", "events")
+    event = events[0]
+    gon.eventtime = event["start_time"]
+    gon.eventid = event["id"]
+
+    @attending = @graph.get_connections(gon.eventid, "attending")
+    gon.attending = @attending
+
+
 
 
   end

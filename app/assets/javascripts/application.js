@@ -17,4 +17,25 @@
 //= require classie
 //= require countdown
 //= require freelancer
+$(document).ready(function (){
+    $('#sign_up').popover({
+        html: true,
+        content : function() {
+            return $('#attend-popover').html();
+        },
+        placement : 'bottom'
+
+    });
+
+    $('#attending-list').popover({
+        html: true,
+        content : function() {
+            return $('#attending-list-tooltip').html();
+        },
+        placement : 'bottom',
+        trigger : 'hover'
+
+    });
+});
+
 

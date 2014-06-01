@@ -10,6 +10,7 @@
 
   <title>Gefion Gaming</title>
 
+  <%= include_gon %>
   <!-- Fonts -->
   <link href="public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">>
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -35,7 +36,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#page-top">Gefion Gaming</a>
+      <a class="navbar-brand" href="#page-top">Gefion Gaming <i class="fa fa-gamepad"></i> </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,9 +54,22 @@
         <li class="page-scroll">
           <a href="#contact">Contact</a>
         </li>
+        <li>
+            <% if current_user %>
+                <a><i class="fa fa-facebook"></i> <%= current_user.name %></a>
+            <% else %>
+                <%= link_to "Log in", "/auth/facebook", id: "sign_in" %>
+            <% end %>
+        </li>
+        <li>
+          <% if current_user %>
+            <%= link_to "Log ud", signout_path, id: "sign_out" %>
+          <% end %>
+        </li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
+
   </div>
   <!-- /.container-fluid -->
 </nav>
@@ -66,7 +80,7 @@
       <div class="col-lg-12">
         <%= image_tag("portfolio/game-alone.png", class: "img-responsive", size:"256x256") %>
         <div class="intro-text">
-          <span class="name">Gefion Gaming <%= @name %></span>
+          <span class="name">Gefion Gaming <%= %></span>
           <hr class="star-light">
         </div>
       </div>
@@ -148,6 +162,11 @@
         </a>
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4 text-center">
+        <i class="fa fa-plus fa-5x"></i>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -160,33 +179,61 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-2 col-lg-offset-2">
+      <div class="col-lg-2 col-lg-offset-2 text-center">
         <h2 id="count-days"></h2>
         <p id="count-days-p">Dage</p>
       </div>
 
-      <div class="col-lg-2">
+      <div class="col-lg-2 text-center">
         <h2 id="count-hours"></h2>
         <p id="count-hours-p">Timer</p>
       </div>
 
-      <div class="col-lg-2">
+      <div class="col-lg-2 text-center">
         <h2 id="count-minutes"></h2>
         <p id="count-minutes-p">Minutter</p>
       </div>
 
-      <div class="col-lg-2">
+      <div class="col-lg-2 text-center">
         <h2 id="count-seconds"></h2>
         <p id="count-seconds-p" >Sekunder</p>
       </div>
+
       <div class="col-lg-8 col-lg-offset-2 text-center">
-        <a href="https://www.facebook.com/events/1434130086837285/" class="btn btn-lg btn-outline">
-          <i class="fa fa-facebook"></i> Tilmeld dig
-        </a>
+        <h4>Tilmelding</h4>
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-lg btn-outline">
+            <input type="radio" name="radio-attendance" id="radio-attending" value="attending"> Ja
+          </label>
+          <label class="btn btn-lg btn-outline">
+            <input type="radio" name="radio-attendance" id="radio-maybe" value ="maybe"> Måske
+          </label>
+          <label class="btn btn-lg btn-outline">
+            <input type="radio" name="radio-attendance" id="radio-declined" value="declined"> Nej
+          </label>
+        </div>
+        <br/>
+        <p id="attending-list">Hvem kommer?</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Hidden attending popovers -->
+<div id="attend-popover" style="display: none">
+  <form class="form-inline">
+    <input type="radio" name="radio-attendance" class="radio-attendance" id ="radio-attending" value = "attending">
+    <input type="radio" name="radio-attendance" class="radio-attendance" id ="radio-maybe" value = "maybe">
+    <input type="radio" name="radio-attendance" class="radio-attendance" id ="radio-decline" value = "declined">
+  </form>
+</div>
+
+<div id = "attending-list-tooltip" class="text-center" style="display: none">
+  <% @attending.each do |x| %>
+    <h6><%= x["name"] %></h6>
+  <% end %>
+</div>
+<!-- end -->
 
 <section id="contact">
   <div class="container">
@@ -280,21 +327,16 @@
     </div>
     <div class="container">
       <div class="row">
-        <details>
-          <summary>hello</summary>
-          <p>hello again</p>
-        </details>
-      </div>
-      <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
           <div class="modal-body">
             <h2>Fifa 14</h2>
             <hr class="star-primary">
-            <%= image_tag("portfolio/fifa-14.png", class: "img-responsive img-centered") %>
+            <%= image_tag("portfolio/fifa-14.png", class: "img-responsive img-centered", width: 500) %>
             <div class="col-lg-8 col-lg-offset-2">
-              <h3>Sign up</h3>
               <form role="form">
                 <div class="row">
+                  <h3>Tilmeldte</h3>
+                  <hr class="star-primary">
                   <div class="form-group col-xs-12 floating-label-form-group">
                     <label for="name">Navn</label>
                     <input class="form-control" type="text" name="name" placeholder="Navn">
@@ -303,7 +345,7 @@
                 <br>
                 <div class="row">
                   <div class="form-group col-xs-12">
-                    <button type="submit" class="btn btn-lg btn-success">Send</button>
+                    <button type="submit" class="btn btn-lg btn-success">Tilmed turnering</button>
                   </div>
                 </div>
               </form>
@@ -485,38 +527,37 @@
     setInterval(function(){updateTime()},1000);
 
     function updateTime(){
-        var countdownToParty = countdown(new Date(2014, 4, 18,15));
-
+        var countdownToParty = countdown(new Date(gon.eventtime));
 
         var h2 = document.getElementById("count-days");
         h2.innerText = countdownToParty.days;
         var p = document.getElementById("count-days-p");
-        if(countdownToParty.days == 1) p.innerText = "Dag";
-        else p.innerText = "Dage";
+        if(countdownToParty.days == 1) p.innerText = "DAG";
+        else p.innerText = "DAGE";
 
 
         var x = document.getElementById("count-hours");
         x.innerText = countdownToParty.hours;
 
         var p = document.getElementById("count-hours-p");
-        if(countdownToParty.hours == 1) p.innerText = "Time";
-        else p.innerText = "Timer";
+        if(countdownToParty.hours == 1) p.innerText = "TIME";
+        else p.innerText = "TIMER";
 
 
         var x = document.getElementById("count-minutes");
         x.innerText = countdownToParty.minutes;
 
         var p = document.getElementById("count-minutes-p");
-        if(countdownToParty.minutes == 1) p.innerText = "Minut";
-        else p.innerText = "Minutter";
+        if(countdownToParty.minutes == 1) p.innerText = "MINUT";
+        else p.innerText = "MINUTTER";
 
 
         var x = document.getElementById("count-seconds");
         x.innerText = countdownToParty.seconds;
 
         var p = document.getElementById("count-seconds-p");
-        if(countdownToParty.seconds == 1) p.innerText = "Sekund";
-        else p.innerText = "Sekunder";
+        if(countdownToParty.seconds == 1) p.innerText = "SEKUND";
+        else p.innerText = "SEKUNDER";
     }
 </script>
 

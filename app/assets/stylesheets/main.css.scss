@@ -16,6 +16,33 @@ p.small {
   font-size: 16px;
 }
 
+#attending-list{
+  padding-top: 20px;
+  font-size:14px;
+}
+
+input[type=radio],  select {
+  outline: none;
+}
+
+.radio-attendance{
+  margin:50px;
+  width:50px;
+  height:25px;
+}
+
+.popover{
+  background-color: black;
+  outline: none;
+  border:none !important;
+  box-shadow:none !important;
+  border-bottom-color: black;
+}
+
+.arrow {
+  border-bottom-color: black;
+}
+
 a,
 a:hover,
 a:focus,
@@ -30,7 +57,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   text-transform: uppercase;
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
