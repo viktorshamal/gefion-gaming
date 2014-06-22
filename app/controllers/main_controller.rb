@@ -18,6 +18,7 @@ class MainController < ApplicationController
     @attending = @graph.get_connections(gon.eventid, "attending")
     gon.attending = @attending
 
+    @gameslist = ["fifa-14","lol","civ"]
 
 
 

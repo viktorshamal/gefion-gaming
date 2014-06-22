@@ -1,15 +1,15 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: project_development
+  database: gaming_development
   pool: 5
-  username: 
+  username: viktor
   password:
 
 test: &TEST
   adapter: postgresql
   encoding: utf8
-  database: project_test
+  database: gaming_test
   pool: 5
   username: 
   password:
@@ -17,10 +17,7 @@ test: &TEST
 production:
   adapter: postgresql
   encoding: utf8
-  database: project_production
+  database: gaming_production
   pool: 5
-  username: 
+  username: viktor
   password:
-
-cucumber:
-  <<: *TEST

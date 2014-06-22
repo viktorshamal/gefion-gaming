@@ -34,8 +34,20 @@ $(document).ready(function (){
         },
         placement : 'bottom',
         trigger : 'hover'
-
     });
+
+    $('.modal-content').css({
+        "background" : function (){
+            var url = "assets/" + this.getAttribute('data-name') + "/cover.jpg";
+            return "url(" + url + ") no-repeat center center fixed";
+        },
+        "-webkit-background-size": "cover",
+        "-moz-background-size": "cover",
+        "-o-background-size": "cover",
+        "background-size": "cover"
+    })
 });
+
+
 
 

@@ -97,70 +97,19 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
+      <% @gameslist.each_with_index do |val,index| %>
+          <div class="col-sm-4 portfolio-item">
+              <%= link_to("#portfolioModal" + (index + 1).to_s,{ class: "portfolio-link", data: {toggle: "modal"}}) do %>
+                  <div class="caption">
+                    <div class="caption-content">
+                      <i class="fa fa-search-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <%= image_tag(@gameslist[index] + "/logo.png", class: "img-responsive") %>
+                  <span class="tourney-icon"><%= image_tag("portfolio/tourney-icon.png") %></span>
+              <% end %>
           </div>
-          <%= image_tag("portfolio/fifa-14.png", class: "img-responsive") %>
-          <span class="tourney-icon"><%= image_tag("portfolio/tourney-icon.png") %></span>
-
-        </a>
-      </div>
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <%= image_tag("portfolio/lol-logo.png", class: "img-responsive") %>
-          <span class="tourney-icon"><%= image_tag("portfolio/tourney-icon.png") %></span>
-        </a>
-      </div>
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <%= image_tag("portfolio/civ.png", class: "img-responsive") %>
-
-        </a>
-      </div>
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <%= image_tag("portfolio/game.png", class: "img-responsive") %>
-        </a>
-      </div>
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <%= image_tag("portfolio/safe.png", class: "img-responsive") %>
-        </a>
-      </div>
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <%= image_tag("portfolio/submarine.png", class: "img-responsive") %>
-        </a>
-      </div>
+      <% end %>
     </div>
     <div class="row">
       <div class="col-sm-4 col-sm-offset-4 text-center">
@@ -318,7 +267,7 @@
 
 <!-- Portfolio Modals -->
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-content">
+  <div class="modal-content" data-name = "fifa-14">
     <div class="close-modal" data-dismiss="modal">
       <div class="lr">
         <div class="rl">
@@ -331,12 +280,10 @@
           <div class="modal-body">
             <h2>Fifa 14</h2>
             <hr class="star-primary">
-            <%= image_tag("portfolio/fifa-14.png", class: "img-responsive img-centered", width: 500) %>
             <div class="col-lg-8 col-lg-offset-2">
               <form role="form">
                 <div class="row">
                   <h3>Tilmeldte</h3>
-                  <hr class="star-primary">
                   <div class="form-group col-xs-12 floating-label-form-group">
                     <label for="name">Navn</label>
                     <input class="form-control" type="text" name="name" placeholder="Navn">
@@ -353,7 +300,7 @@
             <ul class="list-inline item-details">
               <li>Platform: <strong>Xbox 360</strong>
               </li>
-              <li>Date: <strong><a href="http://startbootstrap.com">April 2014</a></strong>
+              <li>Tid: <strong><a href="http://startbootstrap.com">17:00</a></strong>
               </li>
             </ul>
             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -364,7 +311,7 @@
   </div>
 </div>
 <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-content">
+  <div class="modal-content" data-name="lol">
     <div class="close-modal" data-dismiss="modal">
       <div class="lr">
         <div class="rl">
@@ -395,7 +342,7 @@
   </div>
 </div>
 <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-content">
+  <div class="modal-content" data-name="civ">
     <div class="close-modal" data-dismiss="modal">
       <div class="lr">
         <div class="rl">
