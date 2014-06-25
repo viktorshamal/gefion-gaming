@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game_id: 1
+  tournament_date: 2014-06-22 23:02:31
+
+two:
+  game_id: 1
+  tournament_date: 2014-06-22 23:02:31
