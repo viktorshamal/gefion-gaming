@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 @import "font-awesome";
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 
 body {
   overflow-x: hidden;
@@ -36,11 +40,85 @@ input[type=radio],  select {
   outline: none;
   border:none !important;
   box-shadow:none !important;
+  border-radius: 0px !important;
   border-bottom-color: black;
+}
+
+.user-popover{
+  background-color: #F8F8F8;
+  width: 100%;
+  padding: 0;
+}
+
+.user-popover-content{
+  text-align: center;
+  padding: 0px 0px 10px;
+}
+
+
+.line-separator{
+  margin-left: auto;
+  margin-right:  auto;
+  width: 85%;
+  height:1px;
+  background:#777;
+  border-bottom:1px solid #d4d4d4;
+}
+
+
+.popover-team-row{
+  height: 80px;
+}
+
+.popover-team-header{
+
+}
+
+.purple-row{
+  background-color: #270C2D;
+}
+
+.white-row{
+  background-color: white;
+}
+
+.orange-row:hover{
+  background-color: #E07B3E;
+}
+
+.orange-row a {
+  color: grey;
+  font-size: 10px;
+  margin-bottom: 10px;
 }
 
 .arrow {
   border-bottom-color: black;
+}
+
+.own-profile-img{
+  margin-bottom: 15px;
+}
+
+.team-manager-row{
+  margin-top: 10px;
+  font-size: 25px;
+}
+.team-button{
+  background: transparent;
+  border: none !important;
+  width: 40px;
+}
+.team-button:hover{
+  background-color: #E07B3E;
+  border-radius: 10px;
+}
+#user-info-toggle{
+  cursor: pointer;
+}
+
+.team-modal-content{
+  background: #F8F8F8 !important;
 }
 
 a,

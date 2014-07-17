@@ -1,4 +1,5 @@
 class MainController < ApplicationController
+  include MainHelper
   def index
     require 'koala'
 
@@ -10,26 +11,22 @@ class MainController < ApplicationController
 
     @graph = Koala::Facebook::API.new('CAADZCZAhnZAX9sBAOB2ZADLrZCgnfG0fsY5DpQO05ycgRdOmPXYoJyjPIEx5FSBsQpCeRjigHjDD4drNzOz8IDJTQlL9uPjvmkKPlUY7vpeqHYNqj1syB5krUHQPEgQPjmZBP8BCEQiQVyIWOXSNj8IPBbk07P8IjKpiFco6HFFAyu1qD5VPUN6bEBYFZA2pmgZD')
 
-    events = @graph.get_connections('gefiongaming', 'events')
-    event = events[0]
+    event = @graph.get_object('404406766364958')
+
+    #event = events[0]
     gon.eventtime = event['start_time']
     gon.eventid = event['id']
 
     @attending = @graph.get_connections(gon.eventid, 'attending')
-    gon.attending = @attending
+    #gon.attending = @attending
 
     @gameslist = Game.all.to_a
 
     @users = User.all.map(&:name)
 
-    @teamusers = Array.new
-
-    Teamroster.where(team_id: 1).each do |x|
-        @teamusers.push(User.find(x.user_id))
-    end
-
-
+    @teamusers = get_usersinteam 1
 
 
   end
+
 end

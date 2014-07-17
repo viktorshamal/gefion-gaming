@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :tournaments
+  has_many :teamrosters
+  has_many :teams, through: :teamrosters
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

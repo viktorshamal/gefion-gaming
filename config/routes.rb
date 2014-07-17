@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'team_rosters/create'
+
+  get 'team_rosters/new'
+
+  get 'team_rosters/remove', to: 'team_rosters#remove'
+
+  resources :users, :teams, :team_rosters
+
   get 'sessions/create'
 
   get 'sessions/destroy'
@@ -7,6 +15,7 @@ Rails.application.routes.draw do
   get 'session/create'
 
   get 'session/destroy'
+
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

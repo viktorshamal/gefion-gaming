@@ -32,3 +32,13 @@ team_list.each do |name|
   Team.create(name: name)
 end
 =end
+
+=begin
+Tournament.create(gameid: 1, gametag: "fifa-14", maxplayers: 16, tournament_date: DateTime.current)
+
+attending_list = %w(1, 2, 3)
+
+attending_list.each do |teamid|
+  Tournamentroster.create(tournamentid: 1, teamid: teamid)
+end
+=end
