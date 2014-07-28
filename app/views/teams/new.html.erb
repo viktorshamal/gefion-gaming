@@ -1,0 +1,15 @@
+<%= form_for :team, url: teams_path do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= select('team', 'team_id', Team.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'None'}) %>
+    </p>
+
+    <p>
+      <%= f.label :user %>
+      <%= select('team', 'user_id', User.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'None'}) %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
