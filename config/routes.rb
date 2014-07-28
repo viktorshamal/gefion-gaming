@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get 'session/destroy'
 
+  get 'teams/suggestions.json', to: 'teams#load_suggestions'
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

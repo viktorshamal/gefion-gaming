@@ -123,21 +123,21 @@
       <div class="modal-content team-modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          <h4 class="modal-title" id="myModalLabel">Join a team</h4>
         </div>
+
         <div class="modal-body">
-          <%= form_tag(controller: 'team_rosters', method: 'get', class:'') do %>
-              <%= hidden_field_tag :user_id, current_user.id %>
-              <% Team.all.each do |team| %>
-                <%= radio_button_tag(:team_id, team.id,false, class: "hello") %>
-                <%= label_tag(:team_id, team.name) %>
-              <% end %>
+          <div class="form-group floating-label-form-group">
+            <input id="team-searcher" placeholder="Søg efter holdnavn eller ven">
+            <%= form_tag({controller: 'team_rosters', method: 'get'}, class:'', id:'team-form') do %>
+              <%= hidden_field_tag :team_name, nil %>
+              <%= hidden_field_tag :user_id, current_user.id%>
+            <% end %>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <%= submit_tag("Join", class: "btn btn-default-primary") %>
         </div>
-      <% end %>
       </div>
     </div>
   </div>
@@ -374,21 +374,16 @@
             <div class="col-lg-8 col-lg-offset-2">
               <form role="form">
                 <div class="row">
-                  <h3>Turneringer</h3>
-
-                  <% game.tournaments.each do |tournval| %>
-                      <h4><%=tournval.tournament_date.strftime('%H:%M, %e. %B')%></h4>
+                  <h3>Næste turnering</h3>
+                  <% tournament = game.next_tournament %>
+                  <% if tournament %>
                       <p>Tilmeldte</p>
-                      <% tournval.tournament_teams.each do |team| %>
+                      <div class="line-separator"></div>
+                      <% tournament.teams.each do |team| %>
                         <p>
-                          <%= team.team.name %>
+                          <%= team.name %>
                         </p>
                       <% end %>
-                      <div class="form-group col-xs-12 floating-label-form-group">
-                        <label for="name">Navn</label>
-                        <input class="form-control" type="text" name="name" placeholder="Navn">
-                      </div>
-                  <% end %>
                 </div>
                 <br>
                 <div class="row">
@@ -402,9 +397,10 @@
             <ul class="list-inline item-details">
               <li>Platform: <strong><%= @gameslist[index]["platforms"] %></strong>
               </li>
-              <li>Tid: <strong><a href="http://startbootstrap.com">17:00</a></strong>
+              <li>Tid: <strong><a href="http://startbootstrap.com"><%=tournament.tournament_date.strftime('%H:%M, %e. %B') %></a></strong>
               </li>
             </ul>
+                  <% end %>
             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
           </div>
         </div>

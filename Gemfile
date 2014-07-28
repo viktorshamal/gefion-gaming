@@ -35,6 +35,12 @@ gem 'gon'
 
 gem 'rails_12factor', group: :production
 
+gem 'searchkick'
+
+gem 'twitter-typeahead-rails'
+
+gem 'handlebars_assets'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

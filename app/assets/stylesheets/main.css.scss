@@ -96,6 +96,28 @@ input[type=radio],  select {
   border-bottom-color: black;
 }
 
+.twitter-typeahead{
+  width: 100%;
+}
+
+.tt-dropdown-menu {
+  position: none;
+  width: 100%;
+  margin-top: 40px;
+}
+.tt-suggestion {
+  display: inline-block;
+  padding: 3px 20px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  padding: 10px 0px 10px;
+}
+
+.tt-suggestion:hover{
+  background-color: #E07B3E;
+}
+
 .own-profile-img{
   margin-bottom: 15px;
 }
@@ -119,6 +141,18 @@ input[type=radio],  select {
 
 .team-modal-content{
   background: #F8F8F8 !important;
+  border-radius: 0px !important;
+  box-shadow: none;
+}
+
+.team-modal .modal-body{
+  background: #F8F8F8 !important;
+  height: 400px;
+}
+
+.team-modal .modal-header,
+.team-modal .modal-footer{
+  border: none;
 }
 
 a,
@@ -130,13 +164,18 @@ a.active {
   color: #18bc9c;
 }
 
+.team-modal a{
+  color: black;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p {
+p,
+{
   text-transform: uppercase;
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;

@@ -17,6 +17,8 @@
 //= require classie
 //= require countdown
 //= require freelancer
+//= require twitter/typeahead
+//= require handlebars
 $(document).ready(function (){
     $('#sign_up').popover({
         html: true,
@@ -67,6 +69,50 @@ $(document).ready(function (){
         "-o-background-size": "cover",
         "background-size": "cover"
     })
+
+
+    // Twitter typeahead exmaple.
+
+    // instantiate the bloodhound suggestion engine
+    var numbers = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        limit: 10,
+        prefetch: {
+            url: '../teams/show.json',
+            filter: function (list) {
+                alert("hello");
+                return $.map(list, function (team) {
+                    formatData(team);
+                    return { name: team.name };
+                });
+
+            }
+        }
+    });
+
+    // initialize the bloodhound suggestion engine
+    numbers.initialize();
+
+
+
+    // instantiate the typeahead UI
+    $('#team-searcher').typeahead(null, {
+        displayKey: 'name',
+        source: numbers.ttAdapter(),
+        templates: {
+            suggestion: Handlebars.compile([
+                '<img class="img-circle own-profile-img" src="http://graph.facebook.com/1568088149/picture?height=65&width=65">',
+                '<p>{{name}}</p>'
+            ].join(''))
+        }
+    })
+        .on('typeahead:selected', function (e, datum) {
+                $('#team_name').val(datum.name);
+                $('#team-form').submit();
+        })
+    ;
+
 });
 
 
