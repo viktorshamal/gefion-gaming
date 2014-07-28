@@ -81,9 +81,7 @@ $(document).ready(function (){
         prefetch: {
             url: '../teams/show.json',
             filter: function (list) {
-                alert("hello");
                 return $.map(list, function (team) {
-                    formatData(team);
                     return { name: team.name };
                 });
 
