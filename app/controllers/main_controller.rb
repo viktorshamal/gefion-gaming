@@ -13,18 +13,11 @@ class MainController < ApplicationController
 
     event = @graph.get_object('404406766364958')
 
-    #event = events[0]
     gon.eventtime = event['start_time']
     gon.eventid = event['id']
 
     @attending = @graph.get_connections(gon.eventid, 'attending')
-    #gon.attending = @attending
 
-    @gameslist = Game.all.to_a
-
-    @users = User.all.map(&:name)
-
-    @teamusers = get_usersinteam 1
 
 
   end

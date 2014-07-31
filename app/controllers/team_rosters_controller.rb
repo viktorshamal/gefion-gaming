@@ -1,23 +1,32 @@
 class TeamRostersController < ApplicationController
   def create
-    @teamroster = Teamroster.new
-    @teamroster.team_id = Team.find_by_name(params[:team_name]).id
-    @teamroster.user_id = params[:user_id]
+    @team = Team.find_by_name(params[:team_name])
 
-    @teamroster.save
+    tr = Teamroster.new
+    tr.team_id = @team.id
+    tr.user_id = params[:user_id]
 
-    redirect_to :back
+    tr.save
+
+    respond_to do |format|
+      format.html {redirect_to :back}
+      format.js
+    end
+
+
   end
 
   def destroy
-    @teamroster = Teamroster.new
+    tr = Teamroster.new
   end
 
   def remove
-    @teamroster = Teamroster.where('user_id = ? AND team_id = ?', current_user.id, params[:team_id]).first
-    @teamroster.destroy
+    Teamroster.where('user_id = ? AND team_id = ?', current_user.id, params[:team_id]).first.destroy
 
-    redirect_to :back
+    respond_to do |format|
+      format.html {redirect_to :back}
+      format.js
+    end
   end
 
   def new

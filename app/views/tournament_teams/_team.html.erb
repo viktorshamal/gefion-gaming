@@ -1,0 +1,18 @@
+<div id="trn-team-<%= team.id %>">
+  <p><%= team.name %>
+    <% if current_user %>
+        <% if current_user.teams.include?(team) %>
+            <%= link_to tournament_teams_remove_path(:team_id => team.id, :tournament_id => tournament.id), remote: true, data: {confirm: 'Are you sure?'} do %>
+                <i class="fa fa-times"></i>
+            <% end %></p>
+        <% end %>
+    <% end %>
+    <div class="row">
+      <div class="col-lg-offset-2"></div>
+      <% team.users.each do |user| %>
+          <div class="col-md-1">
+            <a data-tooltip="tooltip" data-placement="bottom" title="<%= user.name %>" ><img class="img-rounded profile-img" height="25px" src="http://graph.facebook.com/viktorsa/picture"></a>
+          </div>
+      <% end %>
+    </div>
+</div>

@@ -38,6 +38,20 @@ $(document).ready(function (){
         trigger : 'hover'
     });
 
+    $('#btn-trn-signup').popover({
+        html: true,
+        content : function() {
+            return $('#popover-trn-signup').html();
+        },
+        placement : 'bottom',
+        trigger : 'click'
+    });
+
+    $('form[data-update-target]').on('ajax:success', function(evt, data) {
+        var target = $(this).data('update-target');
+        $('#' + target).html(data);
+    });
+
     $('#user-info-toggle').popover({
         html: true,
         content : function() {
@@ -48,10 +62,6 @@ $(document).ready(function (){
         trigger : 'click'
     });
 
-    $('#hello').tooltip({
-        title:"hello",
-        trigger:"hover"
-    })
 
     $('body').tooltip({
         selector: '[data-tooltip=tooltip]'}
@@ -97,6 +107,7 @@ $(document).ready(function (){
     // instantiate the typeahead UI
     $('#team-searcher').typeahead(null, {
         displayKey: 'name',
+        minLength: 0,
         source: numbers.ttAdapter(),
         templates: {
             suggestion: Handlebars.compile([
@@ -107,6 +118,7 @@ $(document).ready(function (){
     })
         .on('typeahead:selected', function (e, datum) {
                 $('#team_name').val(datum.name);
+                $('#join-team-modal').modal('hide');
                 $('#team-form').submit();
         })
     ;

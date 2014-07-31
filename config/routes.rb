@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get 'team_rosters/remove', to: 'team_rosters#remove'
 
-  resources :users, :teams, :team_rosters
+  get 'tournament_teams/remove', to: 'tournament_teams#remove'
+
+  resources :users, :teams, :team_rosters, :tournament_teams
 
   get 'sessions/create'
 
