@@ -29,6 +29,65 @@ input[type=radio],  select {
   outline: none;
 }
 
+$image-size: 35px;
+
+.multi-user-icon{
+  margin: 10px;
+  border: 5px #F8F8F8;
+  position: relative;
+  background-color: black;
+  border-radius: $image-size;
+  border-top-right-radius: 0px;
+  height: ($image-size * 2);
+  width: ($image-size * 2 );
+}
+
+.user-icon{
+  position: relative;
+}
+.multi-user-image{
+  padding: 2px;
+  width: $image-size;
+  height: $image-size;
+}
+
+.user-icon div {
+  position: absolute;
+  width: $image-size / 2;
+  height: $image-size / 2;
+  border-radius: 100%;
+  background-color: black;
+}
+
+.top { top: -$image-size / 4; }
+.bottom { bottom: -$image-size / 4; }
+.left { left: -$image-size / 4; }
+.right { right: -$image-size / 4; }
+
+.multi-user-image-1{
+  //border-top-right-radius: $image-size;
+  padding-bottom: 1px;
+  padding-left: 1px;
+}
+
+.multi-user-image-2{
+  border-top-left-radius: $image-size;
+  padding-bottom: 1px;
+  padding-right: 1px;
+}
+
+.multi-user-image-3{
+  border-bottom-left-radius: $image-size;
+  padding-top: 1px;
+  padding-right: 1px;
+}
+
+.multi-user-image-4{
+  border-bottom-right-radius: $image-size;
+  padding-top: 1px;
+  padding-left: 1px;
+}
+
 .radio-attendance{
   margin:50px;
   width:50px;
@@ -44,13 +103,18 @@ input[type=radio],  select {
   border-bottom-color: black;
 }
 
+.popover-content{
+  background-color: black;
+}
+
 .user-popover{
-  background-color: #F8F8F8;
+
   width: 100%;
   padding: 0;
 }
 
 .user-popover-content{
+  background-color: #F8F8F8;
   text-align: center;
   padding: 0px 0px 10px;
 }

@@ -1,0 +1,21 @@
+<body class="trn-background" data-name = <%= @tournament.game.tag %>>
+<div class="multi-user-icon">
+    <table>
+        <tr>
+            <td>
+              <div class="user-icon">
+              <%= image_tag 'http://graph.facebook.com/viktorsa/picture', class: 'multi-user-image-2 multi-user-image' %>
+              <div class="bottom right"></div>
+              </div>
+            </td>
+            <td><%= image_tag 'http://graph.facebook.com/mfrenzioussaadaq/picture', class: 'multi-user-image-1 multi-user-image' %></td>
+        </tr>
+        <tr>
+            <td><%= image_tag 'http://graph.facebook.com/viktor.beck.96/picture', class: 'multi-user-image-3 multi-user-image' %></td>
+            <td><%= image_tag 'http://graph.facebook.com/alexander.juel.1/picture', class: 'multi-user-image-4 multi-user-image' %></td>
+        </tr>
+    </table>
+</div>
+</body>
+
+<%= javascript_include_tag 'application' %>
