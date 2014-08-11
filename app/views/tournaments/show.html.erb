@@ -1,20 +1,21 @@
-<body class="trn-background" data-name = <%= @tournament.game.tag %>>
-<div class="multi-user-icon">
-    <table>
-        <tr>
-            <td>
-              <div class="user-icon">
-              <%= image_tag 'http://graph.facebook.com/viktorsa/picture', class: 'multi-user-image-2 multi-user-image' %>
-              <div class="bottom right"></div>
-              </div>
-            </td>
-            <td><%= image_tag 'http://graph.facebook.com/mfrenzioussaadaq/picture', class: 'multi-user-image-1 multi-user-image' %></td>
-        </tr>
-        <tr>
-            <td><%= image_tag 'http://graph.facebook.com/viktor.beck.96/picture', class: 'multi-user-image-3 multi-user-image' %></td>
-            <td><%= image_tag 'http://graph.facebook.com/alexander.juel.1/picture', class: 'multi-user-image-4 multi-user-image' %></td>
-        </tr>
-    </table>
+<head>
+
+</head>
+<body data-name = <%= @tournament.game.tag %>>
+<header id="slide-1" class="trn-header homeSlide">
+   <div class="bcg" data-top="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;" data--500-top="opacity: 1; width: 100%; height: 33%; top: 0%; left: 0%;" data-anchor-target="#slide-1">
+        <!--<%= image_tag(image_path('game-images/' + @tournament.game.tag + '-cover.jpg'), class: "img-header") %> -->
+   </div>
+</header>
+<div class="blank-space" data-name = <%= @tournament.game.tag %>>
+    <% @tournament.teams.each_with_index do |team,index| %>
+        <div class="team-icon" style="background-color: #F8F8F8">
+          <p><%= team.name[0,1] %></p>
+        </div>
+        <% if index-1 % 2 == 0 %>
+            <br>
+        <% end %>
+    <% end %>
 </div>
 </body>
 

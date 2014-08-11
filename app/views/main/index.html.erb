@@ -348,9 +348,11 @@
             <div class="col-lg-8 col-lg-offset-2">
               <form role="form">
                 <div class="row">
-                  <h3>Næste turnering</h3>
                   <% tournament = game.next_tournament %>
                   <% if tournament %>
+                      <%= link_to tournament do %>
+                          <h3>Næste turnering</h3>
+                      <% end %>
                       <p>Tilmeldte</p>
                       <div class="line-separator"></div>
                       <div id="trn-teams">

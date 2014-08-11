@@ -10,6 +10,7 @@ html {
 
 body {
   overflow-x: hidden;
+  min-height: 2000px;
 }
 
 p {
@@ -27,6 +28,39 @@ p.small {
 
 input[type=radio],  select {
   outline: none;
+}
+
+.fixed{
+  position: fixed;
+}
+
+.blank-space{
+  opacity: 1;
+  background-color: #f800bd;
+  min-height: 1000px;
+  z-index: 9000;
+}
+
+.trn-header{
+  background-color: #F8F8F8;
+  overflow: hidden;
+  height: 50%;
+}
+.bcg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('/assets/game-images/fifa-14-cover.jpg');
+  overflow: hidden;
+  height: 20%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0 0 50px  rgba(0, 0, 0, 0.8);
+  -o-box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
 }
 
 $image-size: 35px;
@@ -105,6 +139,17 @@ $image-size: 35px;
 
 .popover-content{
   background-color: black;
+}
+
+.team-icon{
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.team-icon p {
+  font-size: 28px;
 }
 
 .user-popover{

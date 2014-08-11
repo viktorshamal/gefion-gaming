@@ -19,6 +19,7 @@
 //= require freelancer
 //= require twitter/typeahead
 //= require handlebars
+//= require skrollr.min
 $(document).ready(function (){
     <%
         imgs = {}
@@ -27,20 +28,23 @@ $(document).ready(function (){
         end
     %>
 
+    var s = skrollr.init();
+
+
     window.image_url = function (name) {
             return <%= imgs.to_json %>[name]
     };
 
-    function getCover(cover){
+    window.getCover = function (cover){
         return image_url(cover.getAttribute('data-name') + "-cover.jpg");
-    }
+    };
 
     setInterval(function(){updateTime()},1000);
 
     function updateTime(){
         var countdownToParty = countdown(new Date(gon.eventtime));
 
-        $('.unit').each(function (index){
+        $('.unit').each(function (){
             var count = countdownToParty[$(this).data('count')];
             var singular = $(this).data('singular');
             var plural = $(this).data('plural');
@@ -60,6 +64,12 @@ $(document).ready(function (){
         });
     }
     updateTime();
+
+    $('.img-header').mousemove(function(e){
+        var mousePosX = (e.pageX/$(window).width())*100;
+        var mousePosY = (e.pageY/$(window).height())*100;
+        $(this).css('backgroundPosition', mousePosX +'% '+mousePosY+'%');
+    });
 
     $('#sign_up').popover({
         html: true,
@@ -103,17 +113,16 @@ $(document).ready(function (){
     );
 
 
-
-    $('.modal-content, .trn-background').css({
+    $(".modal-content, .trn-background").css({
         "background" : function (){
             var url = getCover(this);
-            return "url(" + url + ") no-repeat center center fixed";
+            return "url(" + url +") no-repeat center center fixed";
         },
         "-webkit-background-size": "cover",
         "-moz-background-size": "cover",
         "-o-background-size": "cover",
         "background-size": "cover"
-    })
+    });
 
 
     // Twitter typeahead exmaple.
