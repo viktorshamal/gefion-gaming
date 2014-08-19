@@ -35,14 +35,21 @@ input[type=radio],  select {
 }
 
 .blank-space{
+  margin-left: auto;
+  margin-right: auto;
   opacity: 1;
-  background-color: #f800bd;
+  background-color: #ffffff;
+  width: 80%;
   min-height: 1000px;
   z-index: 9000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0 0 50px  rgba(0, 0, 0, 0.8);
+  -o-box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
 }
 
 .trn-header{
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   overflow: hidden;
   height: 50%;
 }
@@ -57,10 +64,6 @@ input[type=radio],  select {
   position: fixed;
   top: 0;
   left: 0;
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
-  -webkit-box-shadow: inset 0 0 50px  rgba(0, 0, 0, 0.8);
-  -o-box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
 }
 
 $image-size: 35px;
@@ -262,6 +265,11 @@ $image-size: 35px;
 .team-modal .modal-header,
 .team-modal .modal-footer{
   border: none;
+}
+
+.row-centered{
+  margin: auto;
+  max-width: 35%;
 }
 a,
 a:hover,
@@ -528,10 +536,22 @@ section.success {
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active,
-.btn-outline.active {
+.btn-outline.active,
+#attend-button:checked + #attend-button-label{
   border: solid 2px #fff;
   color: #18bc9c;
   background: #fff;
+}
+
+#attend-button{
+  position: absolute;
+
+  opacity: 0;
+}
+
+#attend-button-label{
+  min-width: 100px;
+  width: 12%;
 }
 
 .floating-label-form-group {

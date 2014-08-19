@@ -51,9 +51,9 @@
         <li class="page-scroll">
           <a href="#about">Næste gang</a>
         </li>
-        <li class="page-scroll">
+        <!--<li class="page-scroll">
           <a href="#contact">Contact</a>
-        </li>
+        </li>-->
         <li class="dropdown">
             <% if current_user %>
               <a id="user-info-toggle"><i class="fa fa-facebook"></i> <%= current_user.name %> <i class="fa fa-chevron-down"></i></a>
@@ -214,7 +214,7 @@
 
       <div class="col-lg-8 col-lg-offset-2 text-center">
         <h4>Tilmelding</h4>
-        <div class="btn-group" data-toggle="buttons">
+        <!--<div class="btn-group" data-toggle="buttons">
           <label class="btn btn-lg btn-outline">
             <input type="radio" name="radio-attendance" id="radio-attending" value="attending"> Ja
           </label>
@@ -224,7 +224,11 @@
           <label class="btn btn-lg btn-outline">
             <input type="radio" name="radio-attendance" id="radio-declined" value="declined"> Nej
           </label>
-        </div>
+        </div>-->
+        <input type="checkbox" name="button-attendance" id="attend-button">
+        <label class="btn btn-lg btn-outline" id="attend-button-label" for="attend-button"> Tilmeld</label>
+
+
         <br/>
         <p id="attending-list">Hvem kommer?</p>
       </div>
@@ -248,7 +252,7 @@
 </div>
 <!-- end -->
 
-<section id="contact">
+<!--<section id="contact">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -287,7 +291,7 @@
       </div>
     </div>
   </div>
-</section>
+</section>-->
 
 <footer class="text-center">
   <div class="footer-above">

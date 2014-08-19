@@ -7,12 +7,14 @@
             <% end %></p>
         <% end %>
     <% end %>
-    <div class="row">
-      <div class="col-lg-offset-2"></div>
-      <% team.users.each do |user| %>
-          <div class="col-md-1">
-            <a data-tooltip="tooltip" data-placement="bottom" title="<%= user.name %>" ><img class="img-rounded profile-img" height="25px" src="http://graph.facebook.com/viktorsa/picture"></a>
-          </div>
-      <% end %>
+    <div class="row-centered">
+        <div class="row">
+          <% users = team.users
+             users.each do |user| %>
+              <div class="col-xs-<%= 12 / users.count%>">
+                <a data-tooltip="tooltip" data-placement="bottom" title="<%= user.name %>" ><img class="img-rounded profile-img" height="25px" src="http://graph.facebook.com/viktorsa/picture"></a>
+              </div>
+          <% end %>
+        </div>
     </div>
 </div>
