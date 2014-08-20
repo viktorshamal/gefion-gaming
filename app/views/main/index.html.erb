@@ -372,8 +372,7 @@
   <div class="modal-content" data-name = "<%= game.tag %>" >
     <div class="close-modal" data-dismiss="modal">
       <div class="lr">
-        <div class="rl">
-        </div>
+        <div class="rl"></div>
       </div>
     </div>
     <div class="container">
@@ -406,17 +405,18 @@
                 </div>
                 </form>
             </div>
-
                 <ul class="list-inline item-details">
                   <li>Platform: <strong><%= game.platforms %></strong>
                   </li>
                   <li>Tid: <strong><a href="http://startbootstrap.com"><%=tournament.tournament_date.strftime('%H:%M, %e. %B') %></a></strong>
                   </li>
                 </ul>
-                  <% end %>
+                    <% end %>
             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
           </div>
         </div>
+        </div>
+      </div>
       </div>
     </div>
   </div>
