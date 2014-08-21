@@ -55,10 +55,10 @@
           <a href="#contact">Contact</a>
         </li>-->
         <% if current_user %>
-            <li class="dropdown visible-md visible-lg">
+            <li class="dropdown visible-sm visible-md visible-lg">
               <a id="user-info-toggle"><i class="fa fa-facebook"></i> <%= current_user.name %> <i class="fa fa-chevron-down"></i></a>
             </li>
-            <li class="page-scroll visible-xs visible-sm">
+            <li class="page-scroll visible-xs">
               <a href="#user-section"><i class="fa fa-facebook"></i> <%= current_user.name %></a>
             </li>
         <% else %>
@@ -299,7 +299,7 @@
   </div>
 </section>-->
 <% if current_user %>
-<section class="visible-xs visible-sm" id="user-section">
+<section class="visible-xs" id="user-section">
     <div id ="user-info-popover" class="mobile-user-wrapper">
       <row>
         <div class="col-md-12">
