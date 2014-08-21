@@ -9,7 +9,7 @@
       <div class="col-md-offset-1 hidden-sm hidden-xs"></div>
       <% team.users.each do |user| %>
           <div class="col-md-1 hidden-sm hidden-xs">
-            <a data-tooltip="tooltip" data-placement="bottom" title="<%= user.name %>" ><img class="img-rounded profile-img" height="25px" src="http://graph.facebook.com/viktorsa/picture"></a>
+            <a data-tooltip="tooltip" data-placement="bottom" title="<%= user.name %>" ><img class="img-rounded profile-img" height="25px" src="http://graph.facebook.com/<%= user.uid %>/picture"></a>
           </div>
       <% end %>
       <div class="col-md-4 col-md-offset-1">
