@@ -96,6 +96,7 @@
         <% end %>
     </div>
     <div class="line-separator"></div>
+    <div id="remaining-teams"><%= current_user.teams.count %> / 5 hold</div>
     <div class="row team-manager-row">
         <div class="col-xs-4 col-xs-offset-2">
           <button data-tooltip="tooltip" data-target="#join-team-modal" data-toggle="modal" data-placement="bottom" title="Join a team" class="team-button"><i class="fa fa-users"></i></button>
@@ -104,6 +105,7 @@
         <button data-tooltip="tooltip" data-target="#create-team-modal" data-toggle="modal" data-placement="bottom" title="Create a team" class="team-button"><i class="fa fa-plus"></i></button>
       </div>
     </div>
+
   <% end %>
 </div>
   <!-- Modal -->

@@ -1,19 +1,25 @@
 class TeamRostersController < ApplicationController
   def create
+
     @team = Team.find_by_name(params[:team_name])
+    @user = User.find(params[:user_id])
 
-    tr = Teamroster.new
-    tr.team_id = @team.id
-    tr.user_id = params[:user_id]
+    @count = @user.teams.count
 
-    tr.save
+    if @count < 5
+      tr = Teamroster.new
+      tr.team_id = @team.id
+      tr.user_id = @user.id
+
+      raise 'error' unless tr.save
+    else
+      raise 'error'
+    end
 
     respond_to do |format|
       format.html {redirect_to :back}
       format.js
     end
-
-
   end
 
   def destroy
@@ -22,6 +28,8 @@ class TeamRostersController < ApplicationController
 
   def remove
     Teamroster.where('user_id = ? AND team_id = ?', current_user.id, params[:team_id]).first.destroy
+
+    @count = current_user.teams.count
 
     respond_to do |format|
       format.html {redirect_to :back}

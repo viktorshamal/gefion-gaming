@@ -1,1 +1,2 @@
+$('#remaining-teams').html("<%= @count + 1 %> / 5 hold");
 $('#menu-teams').append("<%= escape_javascript(render partial: 'team_rosters/team', locals: {:team => @team}) %>");
