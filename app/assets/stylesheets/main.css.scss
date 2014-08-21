@@ -241,7 +241,7 @@ $image-size: 35px;
 .team-button{
   background: transparent;
   border: none !important;
-  width: 50%;
+  width: 40px;
 }
 .team-button:hover{
   background-color: #E07B3E;
@@ -250,9 +250,12 @@ $image-size: 35px;
 .xp-holder h4{
   margin-top: 2px;
 }
-
 .team-users-icons{
   width: 50%;
+}
+.remaining-teams{
+  bottom: 5px;
+  left: 6px
 }
 
 .team-xp-div{
