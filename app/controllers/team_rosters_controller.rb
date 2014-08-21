@@ -4,9 +4,9 @@ class TeamRostersController < ApplicationController
     @team = Team.find_by_name(params[:team_name])
     @user = User.find(params[:user_id])
 
-    @count = @user.teams.count
+    @teamcount = @user.teams.count
 
-    if @count < 5
+    if @teamcount < 5
       tr = Teamroster.new
       tr.team_id = @team.id
       tr.user_id = @user.id
