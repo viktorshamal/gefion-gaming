@@ -1,0 +1,25 @@
+<div id ="user-info-popover">
+  <row>
+    <div class="col-md-12">
+      <a><img class="img-circle own-profile-img" src="http://graph.facebook.com/<%= current_user.uid %>/picture?height=65&width=65"></a>
+    </div>
+  </row>
+  <div class="popover-team-header">
+    <h4>Your teams</h4>
+  </div>
+  <div id="menu-teams">
+    <% current_user.teams.each do |team| %>
+        <%= render partial: 'team_rosters/team', locals: {:team => team} %>
+    <% end %>
+  </div>
+  <div class="line-separator"></div>
+  <div id="remaining-teams"><%= current_user.teams.count %> / 5 hold</div>
+  <div class="row team-manager-row">
+    <div class="col-xs-4 col-xs-offset-2">
+      <button data-tooltip="tooltip" data-target="#join-team-modal" data-toggle="modal" data-placement="bottom" title="Join a team" class="team-button"><i class="fa fa-users"></i></button>
+    </div>
+    <div class="col-xs-4">
+      <button data-tooltip="tooltip" data-target="#create-team-modal" data-toggle="modal" data-placement="bottom" title="Create a team" class="team-button"><i class="fa fa-plus"></i></button>
+    </div>
+  </div>
+</div>
