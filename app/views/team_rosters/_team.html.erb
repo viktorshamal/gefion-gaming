@@ -5,16 +5,18 @@
           <i class="fa fa-times"></i>
       <% end %>
     </p>
-    <div>
+    <div class="team-users-icons">
       <div class="col-md-offset-1 hidden-sm hidden-xs"></div>
-      <% team.users.each do |user| %>
-          <% if user != current_user %>
-          <div class="col-md-1 hidden-sm hidden-xs">
+      <% team.users.take(5).each do |user| %>
+          <% if true %>
+          <div class="col-xs-1">
             <a data-tooltip="tooltip" data-placement="bottom" title="<%= user.name %>" ><img class="img-rounded profile-img" height="25px" src="http://graph.facebook.com/<%= user.uid %>/picture"></a>
           </div>
           <% end %>
       <% end %>
-      <div class="col-md-4 col-md-offset-1">
+    </div>
+    <div class="team-xp-div">
+      <div class="col-md-3 xp-holder">
         <h4>exp:1000</h4>
       </div>
     </div>
