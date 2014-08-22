@@ -4,10 +4,11 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(name: params[:name])
 
-    @team.save
-
+    if current_user && current_user.teams.count < 5
+      @team = Team.new(name: params[:name])
+      Teamroster.create(:team_id => @team.id, :user_id => current_user.id) if @team.save
+    end
     redirect_to :back
   end
 

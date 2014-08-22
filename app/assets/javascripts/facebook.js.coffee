@@ -13,7 +13,7 @@ window.fbAsyncInit = ->
     xfbml: false,
     cookie: true,
     status: true,
-    version: 'v2.0'
+    version: 'v2.1'
   )
 
   FB.getLoginStatus((response) ->
@@ -39,7 +39,7 @@ window.fbAsyncInit = ->
     $('#attend-button').prop('checked', check)
     console.log "set " + check
 
-  ###$('#attend-button').on "change", ->
+  $('#attend-button').on "change", ->
     rsvp_bool = false
     FB.api "/me/events/?since=1396692070", "GET", ((response) ->
       if response and not response.error
@@ -55,5 +55,5 @@ window.fbAsyncInit = ->
         FB.api "/" + gon.eventid + "/" + rsvp_status, "POST", ((response) ->
           console.log response if response and not response.error
         )
-    )###
+    )
 
