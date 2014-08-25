@@ -130,7 +130,8 @@
           </div>
           <div class="modal-body">
             <%= form_tag(controller: 'teams', method: 'get', class:'') do %>
-                    <%= text_field_tag 'name', nil, placeholder: 'Enter team name...'%>
+                    <%= text_field_tag 'name', nil, placeholder: 'Navn'%>
+                    <%= password_field_tag 'password', nil, placeholder: 'Password (valgfrit)' %>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
