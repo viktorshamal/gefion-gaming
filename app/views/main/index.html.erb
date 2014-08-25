@@ -98,11 +98,8 @@
         <div class="modal-body">
           <div class="form-group floating-label-form-group">
             <input id="team-searcher" placeholder="Søg efter holdnavn eller ven">
-            <%= form_tag team_rosters_path, id:'team-form', :remote => true do %>
-              <%= hidden_field_tag :team_name, nil %>
-              <%= hidden_field_tag :user_id, current_user.id%>
-            <% end %>
-            </div>
+          </div>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -110,6 +107,20 @@
       </div>
     </div>
   </div>
+    <div class="modal fade" id="team-password-modal">
+      <div class="modal-content team-form-div" style="">
+        <div class="modal-body">
+        <h3>Password:</h3>
+            <%= form_tag team_rosters_path, id:'team-form', :remote => true do %>
+                <%= password_field_tag :password, nil, id: 'team-form-password'%>
+                <%= hidden_field_tag :team_id, nil %>
+                <%= hidden_field_tag :user_id, current_user.id%>
+                <br>
+                <%= submit_tag 'Tilmeld hold', class: 'btn btn-lg' %>
+            <% end %>
+        </div>
+      </div>
+    </div>
     <div class="modal fade team-modal" id="create-team-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content team-modal-content">

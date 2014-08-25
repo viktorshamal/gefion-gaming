@@ -1,15 +1,24 @@
 class TeamRostersController < ApplicationController
   def create
 
-    @team = Team.find_by_name(params[:team_name])
+    @team = Team.find(params[:team_id])
     @user = User.find(params[:user_id])
+    password = params[:password]
+    tr = Teamroster.new
 
     @teamcount = @user.teams.count
 
     if @teamcount < 5
-      tr = Teamroster.new
-      tr.team_id = @team.id
-      tr.user_id = @user.id
+
+      if @team.has_password?
+        if @team.password == password
+          tr.team_id = @team.id
+          tr.user_id = @user.id
+        end
+      else
+        tr.team_id = @team.id
+        tr.user_id = @user.id
+      end
 
       raise 'error' unless tr.save
     else

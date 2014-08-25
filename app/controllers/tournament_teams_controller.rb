@@ -7,7 +7,7 @@ class TournamentTeamsController < ApplicationController
     tt.tournament_id = @tournament.id
     tt.team_id = @team.id
 
-    raise 'error ' unless tt.save
+    raise 'error' unless tt.save
 
     respond_to do |format|
       format.html {redirect_to :back}

@@ -14,9 +14,10 @@ class TeamsController < ApplicationController
 
   def show
     @suggestions = Team.all
+    
     respond_to do |format|
-      format.html
-      format.json { render json: @suggestions }
+      format.html { render json: @suggestions.map { |team| {:name => team.name, :id => team.id, :hasPass => team.has_password?}} }
+      format.json { render json: @suggestions.map { |team| {:name => team.name, :id => team.id, :hasPass => team.has_password?}} }
     end
   end
 
