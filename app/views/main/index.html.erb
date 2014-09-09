@@ -99,7 +99,6 @@
           <div class="form-group floating-label-form-group">
             <input id="team-searcher" placeholder="Søg efter holdnavn eller ven">
           </div>
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -110,14 +109,16 @@
     <div class="modal fade" id="team-password-modal">
       <div class="modal-content team-form-div" style="">
         <div class="modal-body">
-        <h3>Password:</h3>
-            <%= form_tag team_rosters_path, id:'team-form', :remote => true do %>
-                <%= password_field_tag :password, nil, id: 'team-form-password'%>
-                <%= hidden_field_tag :team_id, nil %>
-                <%= hidden_field_tag :user_id, current_user.id%>
-                <br>
-                <%= submit_tag 'Tilmeld hold', class: 'btn btn-lg' %>
-            <% end %>
+        <div class="floating-label-form-group form-group">
+            <h3>Password:</h3>
+                <%= form_tag team_rosters_path, id:'team-form', :remote => true do %>
+                    <%= password_field_tag :password, nil, id: 'team-form-password'%>
+                    <%= hidden_field_tag :team_id, nil %>
+                    <%= hidden_field_tag :user_id, current_user.id%>
+                    <br>
+                    <%= submit_tag 'Tilmeld hold', class: 'btn btn-lg' %>
+                <% end %>
+            </div>
         </div>
       </div>
     </div>
@@ -224,8 +225,6 @@
         </div>-->
         <input type="checkbox" name="button-attendance" id="attend-button">
         <label class="btn btn-lg btn-outline" id="attend-button-label" for="attend-button"> Tilmeld</label>
-
-
         <br/>
         <p id="attending-list">Hvem kommer?</p>
       </div>
@@ -243,9 +242,10 @@
 </div>
 
 <div id = "attending-list-tooltip" class="text-center" style="display: none">
-  <% @attending.each do |x| %>
+  <% @attending.first(15).each do |x| %>
     <h6><%= x["name"] %></h6>
   <% end %>
+    <h6>... og <%= @attending.count - 15 %> andre ...</h6>
 </div>
 <!-- end -->
 

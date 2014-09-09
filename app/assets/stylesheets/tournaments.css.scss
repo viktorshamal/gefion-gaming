@@ -1,3 +1,125 @@
 // Place all the styles related to the tournaments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.trn-background{
+  background-color: #18bc9c;
+  //background-size: 100% 800px;
+  //background-image: url('/assets/game-images/fifa-14-cover.jpg');
+}
+
+.blank-space{
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+  background-color: #ffffff;
+  width: 80%;
+  min-height: 1000px;
+  z-index: 9000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0 0 50px  rgba(0, 0, 0, 0.8);
+  -o-box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.info-card{
+  margin-left: 5vw;
+  margin-top: 40px;
+  width: 90vw;
+  max-width: 400px;
+  height: 45wv;
+  max-height: 300px;
+  text-align: center;
+  background-color: #F8F8F8;
+}
+
+.info-card-box{
+  padding-top: 20px;
+  text-align: center;
+}
+.effect6
+{
+  position:relative;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect6:before, .effect6:after
+{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  box-shadow:0 0 20px rgba(0,0,0,0.8);
+  top:50%;
+  bottom:0;
+  left:10px;
+  right:10px;
+  -moz-border-radius:100px / 10px;
+  border-radius:100px / 10px;
+}
+
+.trn-name{
+  padding-top: 10px;
+}
+
+$circle-diameter: 2000px;
+$dia-diff: 75px;
+
+$team-circle-width: 75px;
+
+.circle{
+  border-radius: 50%;
+}
+
+.circle-container{
+  min-width: 300px;
+  min-height: 300px;
+  position: absolute;
+  overflow: hidden;
+  right: 0px;
+  bottom: 0px;
+  width: 75vw;
+  height: 75vw;
+}
+
+.circle-base{
+  position: absolute;
+  width: 150vw;
+  height: 150vw;
+}
+
+.circle-purple{
+  background-color: #270C2D;
+}
+
+.circle-orange{
+  background-color: #E07B3E;
+}
+
+.circle-teal{
+  background-color: #18bc9c;
+}
+
+
+@for $i from 0 through 10 {
+  .circle-team-#{$i} {
+    position: relative;
+    left: $dia-diff - (4.5* $team-circle-width) + $i* 15px;
+    top: calc(50% - #{$team-circle-width + $i*50px});
+    width: $team-circle-width;
+    height: $team-circle-width;
+  }
+}
+
+.circle-size {
+  min-width: 600px;
+  min-height: 600px;
+  position: relative;
+  $diameter: calc(100% - #{5vw});
+  left: 11vw;
+  top: 11vw;
+  width: $diameter;
+  height: $diameter;
+}
