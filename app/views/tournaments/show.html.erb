@@ -3,6 +3,9 @@
 <body class="trn-background" >
 
 <div class="info-card effect6">
+  <%= link_to main_index_path do %>
+    <i class="fa fa-reply return-arrow"></i>
+  <% end %>
   <h1 class="trn-name"><%= @tournament.game.name %></h1>
   <div class="line-separator"></div>
   <div class="row">
@@ -30,6 +33,9 @@
 <div class="circle-container">
   <div class="circle-base">
     <div class="circle circle-purple circle-size">
+      <div class="circle circle-teal circle-team-0"></div>
+      <div class="circle circle-teal circle-team-1"></div>
+      <div class="circle circle-teal circle-team-2"></div>
       <div class="circle circle-orange circle-size">
         <div class="circle circle-purple circle-size">
           <div class="circle circle-orange circle-size">

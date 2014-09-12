@@ -60,17 +60,25 @@
   border-radius:100px / 10px;
 }
 
+.return-arrow{
+  left: 20px;
+  top: 12px;
+  position: absolute;
+  font-size: 2em;
+  padding: 5px;
+}
+
 .trn-name{
   padding-top: 10px;
 }
 
-$circle-diameter: 2000px;
+$circle-diameter: 700px;
 $dia-diff: 75px;
 
-$team-circle-width: 75px;
+$team-circle-width: 60px;
 
 .circle{
-  border-radius: 50%;
+  //border-radius: 50%;
 }
 
 .circle-container{
@@ -80,8 +88,8 @@ $team-circle-width: 75px;
   overflow: hidden;
   right: 0px;
   bottom: 0px;
-  width: 75vw;
-  height: 75vw;
+  width: 67.2vw;
+  height: 67.2vw;
 }
 
 .circle-base{
@@ -105,11 +113,11 @@ $team-circle-width: 75px;
 
 @for $i from 0 through 10 {
   .circle-team-#{$i} {
-    position: relative;
-    left: $dia-diff - (4.5* $team-circle-width) + $i* 15px;
-    top: calc(50% - #{$team-circle-width + $i*50px});
-    width: $team-circle-width;
-    height: $team-circle-width;
+    position: absolute;
+    left: 2.5vw;
+    top: #{(10*$i)+10}vw;
+    width: 5vw;
+    height: 5vw;
   }
 }
 
@@ -118,8 +126,8 @@ $team-circle-width: 75px;
   min-height: 600px;
   position: relative;
   $diameter: calc(100% - #{5vw});
-  left: 11vw;
-  top: 11vw;
+  left: 10vw;
+  top: 10vw;
   width: $diameter;
   height: $diameter;
 }
