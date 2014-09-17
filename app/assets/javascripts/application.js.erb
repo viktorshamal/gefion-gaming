@@ -99,6 +99,18 @@ $(document).ready(function (){
         trigger : 'click'
     });
 
+    $('#alert-toggle').popover({
+        html: true,
+        content : function() {
+            return $('#alert-popover').html();
+        },
+        template : '<div class="popover alert-popover user-popover" role="tooltip"><h3 class="popover-title"></h3><div class="popover-content user-popover-content"></div></div>',
+        placement: 'bottom',
+        trigger: 'click'
+    }).on('show.bs.popover', function(){
+        $('#user-info-toggle').popover('hide');
+    });
+
     $('#user-info-toggle').popover({
         html: true,
         content : function() {
@@ -107,6 +119,8 @@ $(document).ready(function (){
         template : '<div class="popover user-popover" role="tooltip"><h3 class="popover-title"></h3><div class="popover-content user-popover-content"></div></div>',
         placement : 'bottom',
         trigger : 'click'
+    }).on('show.bs.popover', function(){
+        $('#alert-toggle').popover('hide');
     });
 
     $('body').tooltip({

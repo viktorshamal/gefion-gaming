@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  match 'conversations/notify', to: 'conversations#notify', via: [:get,:post]
+
+  get 'conversations/new_notify', to: 'conversations#new_notify'
+
+  get 'conversations/clear'
+
   get 'team_rosters/create'
 
   get 'team_rosters/new'

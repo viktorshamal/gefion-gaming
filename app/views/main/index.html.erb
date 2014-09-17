@@ -61,6 +61,9 @@
             <li class="page-scroll visible-xs">
               <a href="#user-section"><i class="fa fa-facebook"></i> <%= current_user.name %></a>
             </li>
+            <!--<li class="alert-button">
+              <a id="alert-toggle"><i class="fa fa-bell"></i></a>
+            </li>-->
         <% else %>
             <li class="dropdown">
                 <%= link_to "Log in", "/auth/facebook", id: "sign_in" %>
@@ -81,12 +84,12 @@
 </nav>
 <!-- Hidden user-info popover-->
 <% if current_user %>
-    <div style="display: none">
-        <%= render 'users/userinfo' %>
-    </div>
-<% end %>
-  <!-- Modal -->
-  <% if current_user %>
+  <div style="display: none">
+    <%= render 'users/userinfo' %>
+  </div>
+  <div style="display: none">
+    <%= render 'users/alerts' %>
+  </div>
   <div class="modal fade team-modal" id="join-team-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content team-modal-content">
@@ -186,8 +189,11 @@
       <% end %>
     </div>
     <div class="row">
-      <div class="col-sm-4 col-sm-offset-4 text-center">
-        <i class="fa fa-plus fa-5x"></i>
+      <div class="col-sm-1 col-sm-offset-5 text-center">
+        <i class="fa fa-list fa-4x"></i>
+      </div>
+      <div class="col-sm-1 text-center">
+        <i class="fa fa-plus fa-4x"></i>
       </div>
     </div>
   </div>
@@ -306,7 +312,7 @@
         <div class="footer-col col-md-4">
           <h3>Find os</h3>
           <ul class="list-inline">
-            <li><a href="https://www.facebook.com/pages/Gefion-Gaming/612060718823769" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+            <li><a href="https://www.facebook.com/gefiongaming" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
             </li>
           </ul>
         </div>
@@ -354,9 +360,7 @@
                 <div class="row">
                   <% tournament = game.next_tournament %>
                   <% if tournament %>
-                      <%= link_to tournament do %>
-                          <h3>Næste turnering</h3>
-                      <% end %>
+                      <h3>Næste turnering</h3>
                       <p>Tilmeldte</p>
                       <div class="line-separator"></div>
                       <div id="trn-teams">
@@ -393,15 +397,7 @@
 
 <!-- Tournament signup popover -->
 <div id="popover-trn-signup" style="display: none">
-  <div class="user-popover" >
-    <% if tournament and current_user%>
-        <% current_user.teams.each do |team|%>
-            <% unless tournament.teams.include?(team)%>
-                <%= link_to team.name, tournament_teams_path(:team_id => team.id, :tournament_id => tournament.id), method: :post, :remote => true %>
-            <% end %>
-        <% end %>
-    <% end %>
-  </div>
+  <%= render partial: 'tournament_teams/signup', locals: {:tournament => tournament} %>
 </div>
 <% end %>
 

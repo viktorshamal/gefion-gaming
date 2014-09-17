@@ -2,10 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*body{
+  width: 100vw;
+  height: 100vh;
+}*/
+
 .trn-background{
   background-color: #18bc9c;
-  //background-size: 100% 800px;
-  //background-image: url('/assets/game-images/fifa-14-cover.jpg');
+  background-size: 100% 800px;
+  background-image: url('/assets/game-images/fifa-14-cover.jpg');
 }
 
 .blank-space{
@@ -75,7 +80,7 @@
 $circle-diameter: 700px;
 $dia-diff: 75px;
 
-$team-circle-width: 60px;
+$team-circle-width: 50px;
 
 .circle{
   //border-radius: 50%;
@@ -90,12 +95,6 @@ $team-circle-width: 60px;
   bottom: 0px;
   width: 67.2vw;
   height: 67.2vw;
-}
-
-.circle-base{
-  position: absolute;
-  width: 150vw;
-  height: 150vw;
 }
 
 .circle-purple{
@@ -114,18 +113,23 @@ $team-circle-width: 60px;
 @for $i from 0 through 10 {
   .circle-team-#{$i} {
     position: absolute;
-    left: 2.5vw;
-    top: #{(10*$i)+10}vw;
-    width: 5vw;
-    height: 5vw;
+    left: 3vw;
+    top: calc(4% * #{$i} + #{12vw});
+    width: 4vw;
+    height: 4vw;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vw;
+    font-size: 2vw;
   }
 }
 
 .circle-size {
-  min-width: 600px;
-  min-height: 600px;
+  min-width: 300px;
+  min-height: 300px;
   position: relative;
-  $diameter: calc(100% - #{5vw});
+  $diameter: calc(100% - #{10vw});
   left: 10vw;
   top: 10vw;
   width: $diameter;

@@ -267,6 +267,34 @@ $image-size: 35px;
   cursor: pointer;
 }
 
+#alert-toggle{
+  cursor: pointer;
+}
+
+.alert-popover{
+  width: 300px;
+}
+
+.alert-box{
+  height: 60px;
+  width: 80%;
+  white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  white-space: pre-wrap;       /* css-3 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  word-break: break-all;
+  white-space: normal;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert-box h6 {
+  margin: 0px;
+  padding-top: 10px;
+}
+
 .team-modal-content{
   background: #F8F8F8 !important;
   border-radius: 0px !important;

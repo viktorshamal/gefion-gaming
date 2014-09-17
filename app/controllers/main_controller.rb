@@ -7,11 +7,14 @@ class MainController < ApplicationController
 
     if current_user
       gon.uid = current_user.uid
+
+      @alerts = current_user.mailbox.notifications
+      #@receipts = @alerts.first.receipts_for current_user
     end
 
     @graph = Koala::Facebook::API.new('CAADZCZAhnZAX9sBAOB2ZADLrZCgnfG0fsY5DpQO05ycgRdOmPXYoJyjPIEx5FSBsQpCeRjigHjDD4drNzOz8IDJTQlL9uPjvmkKPlUY7vpeqHYNqj1syB5krUHQPEgQPjmZBP8BCEQiQVyIWOXSNj8IPBbk07P8IjKpiFco6HFFAyu1qD5VPUN6bEBYFZA2pmgZD')
 
-    event = @graph.get_object('1398796143676246')
+    event = @graph.get_object('506292156140866')
 
     gon.eventtime = event['start_time']
     gon.eventid = event['id']

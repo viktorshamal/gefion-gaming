@@ -16,6 +16,7 @@ class TournamentTeamsController < ApplicationController
   end
 
   def remove
+    @tournament = Tournament.find(params[:tournament_id])
     TournamentTeam.where('tournament_id = ? AND team_id = ?', params[:tournament_id], params[:team_id]).first.destroy
 
     respond_to do |format|

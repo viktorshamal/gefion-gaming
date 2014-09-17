@@ -1,0 +1,21 @@
+<div id="alert-popover">
+  <div class="popover-team-header">
+    <h4>Beskeder</h4>
+  </div>
+  <div class="line-separator"></div>
+  <% if @alerts.count != 0 %>
+      <% @alerts.each do |alert|%>
+          <% unless alert.is_read? current_user %>
+              <div class="orange-row">
+                  <div class="alert-box">
+                    <h6><%= alert.subject %></h6>
+                  </div>
+                  <div class="line-separator"></div>
+              </div>
+          <% end %>
+      <% end %>
+  <% else %>
+    <h6>Ingen beskeder</h6>
+  <% end %>
+
+</div>

@@ -1,0 +1,9 @@
+<div class="user-popover" >
+  <% if tournament and current_user%>
+      <% current_user.teams.each do |team|%>
+          <% unless tournament.teams.include?(team)%>
+              <%= link_to team.name, tournament_teams_path(:team_id => team.id, :tournament_id => tournament.id), method: :post, :remote => true %>
+          <% end %>
+      <% end %>
+  <% end %>
+</div>

@@ -1,1 +1,3 @@
 $('#trn-teams').append("<%= escape_javascript(render partial: 'tournament_teams/team', locals: {:team => @team, :tournament => @tournament}) %>");
+$('.user-popover').html("<%= escape_javascript(render partial: 'tournament_teams/signup', locals: {:tournament => @tournament}) %>");
+$('#btn-trn-signup').popover('hide');
