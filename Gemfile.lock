@@ -197,7 +197,7 @@ DEPENDENCIES
   mailboxer
   omniauth
   omniauth-facebook (= 1.4.0)
-  pg
+  pg (= 0.17.1)
   rails (= 4.1.0)
   rails_12factor
   sass-rails (~> 4.0.3)

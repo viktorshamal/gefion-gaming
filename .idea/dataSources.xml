@@ -4,8 +4,7 @@
     <data-source source="LOCAL" name="Rails gaming: development" uuid="526527a5-31db-4a81-b563-6fb9792186e9">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:gaming_development</jdbc-url>
-      <user-name>viktor</user-name>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/gaming_development</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails gaming: test" uuid="9a474f20-1b6c-4f7e-a8f6-1025c5b734c0">
@@ -18,7 +17,6 @@
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:gaming_production</jdbc-url>
-      <user-name>viktor</user-name>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails gaming: cucumber" uuid="326d0e08-8dfb-4b95-b924-cf0c9101940f">
@@ -29,4 +27,3 @@
     </data-source>
   </component>
 </project>
-
