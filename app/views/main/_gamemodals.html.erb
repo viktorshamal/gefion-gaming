@@ -1,0 +1,65 @@
+<!-- Portfolio Modals -->
+<% Game.all.each do |game| %>
+    <div class="portfolio-modal modal fade" id="portfolioModal<%= game.id.to_s %>" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content" data-name = "<%= game.tag %>" >
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <div class="modal-body">
+                <h2><%= game.name%></h2>
+                <hr class="star-primary">
+                <div class="col-lg-8 col-lg-offset-2">
+                  <form role="form">
+                    <div class="row">
+                      <% tournament = game.next_tournament %>
+                      <% if tournament %>
+                          <h3>Næste turnering</h3>
+
+                          <div class="row">
+                            <div class="col-md-4">
+                                Turnstyle
+                            </div>
+                            <div class="col-md-4">
+                                Rules
+                            </div>
+                            <div class="col-md-4">
+                                Rewards
+                            </div>
+                          </div>
+
+                          <p>Tilmeldte</p>
+                          <div class="line-separator"></div>
+                            <%= render partial: 'tournament_teams/teams', locals: {:tournament => tournament} %>
+                          </div>
+                          <br>
+                          <div class="row">
+                            <div class="form-group col-xs-12">
+                              <button type="button" id="btn-trn-signup" class="btn btn-lg btn-success">Tilmed turnering</button>
+                            </div>
+                          </div>
+                          </form>
+                          </div>
+                          <ul class="list-inline item-details">
+                            <li>Platform: <strong><%= game.platforms %></strong>
+                            </li>
+                            <li>Tid: <strong><%=tournament.tournament_date.strftime('%H:%M, %e. %B') %></strong>
+                            </li>
+                          </ul>
+                      <% end %>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tournament signup popover -->
+    <div id="popover-trn-signup" style="display: none">
+      <%= render partial: 'tournament_teams/signup', locals: {:tournament => tournament} %>
+    </div>
+<% end %>

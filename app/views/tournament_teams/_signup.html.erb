@@ -1,9 +1,28 @@
-<div class="user-popover" >
-  <% if tournament and current_user%>
-      <% current_user.teams.each do |team|%>
-          <% unless tournament.teams.include?(team)%>
-              <%= link_to team.name, tournament_teams_path(:team_id => team.id, :tournament_id => tournament.id), method: :post, :remote => true %>
-          <% end %>
+<% if tournament and current_user%>
+  <% current_user.teams.each do |team|%>
+      <% unless tournament.teams.include?(team)%>
+          <div id="menu-team-<%= team.id%>">
+            <div class="line-separator"></div>
+            <div class="popover-team-row orange-row">
+              <p><%= team.name %><%= link_to tournament_teams_path(:team_id => team.id, :tournament_id => tournament.id), method: :post, :remote => true do %>
+                    <i class="fa fa-times"></i>
+                <% end %>
+              </p>
+              <div class="team-users-icons">
+                <div class="col-md-offset-1 hidden-sm hidden-xs"></div>
+                <% team.users.take(4).each do |user| %>
+                    <div class="col-xs-1">
+                      <a data-tooltip="tooltip" data-placement="bottom" title="<%= user.name %>" ><img class="img-rounded profile-img" height="25px" src="http://graph.facebook.com/<%= user.uid %>/picture"></a>
+                    </div>
+                <% end %>
+              </div>
+              <div class="team-xp-div">
+                <div class="col-md-3 xp-holder">
+                  <h4>exp:<%= team.xp %></h4>
+                </div>
+              </div>
+            </div>
+          </div>
       <% end %>
   <% end %>
-</div>
+<% end %>

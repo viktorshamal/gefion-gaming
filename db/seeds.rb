@@ -7,15 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 =begin
 games_list = [
-      ["Fifa 14","Xbox 360","0","fifa-14"],
-      ["League of Legends", "PC", "0", "lol"],
-      ["Civilization IV","PC","0","civ-5"]
+      ['League of Legends', 'PC', 'lol'],
+      ['Civilization IV', 'PC', 'civ-5']
 ]
 
-games_list.each do |name, platforms, tournaments, tag|
-  Game.create(name: name, platforms: platforms, tournaments: tournaments, tag: tag)
+games_list.each do |name, platforms, tag|
+  Game.create(name: name, platforms: platforms, tag: tag)
 end
 =end
+
 
 =begin
 user_list = %w(Mathias Neufeld Mohamed Benjamin Rick Astley Oscar)
@@ -33,9 +33,10 @@ team_list.each do |name|
 end
 =end
 
-=begin
-Tournament.create(gameid: 1, gametag: "fifa-14", maxplayers: 16, tournament_date: DateTime.current)
 
+#Tournament.create(gameid: 1, gametag: "fifa-14", maxplayers: 16, tournament_date: DateTime.current)
+
+=begin
 attending_list = %w(1, 2, 3)
 
 attending_list.each do |teamid|

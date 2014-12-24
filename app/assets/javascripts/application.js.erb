@@ -86,6 +86,7 @@ $(document).ready(function (){
         content : function() {
             return $('#attending-list-tooltip').html();
         },
+        template : '<div class="popover attend-popover" role="tooltip"><h3 class="popover-title"></h3><div class="popover-content attend-popover-content"></div></div>',
         placement : 'bottom',
         trigger : 'hover'
     });
@@ -95,6 +96,7 @@ $(document).ready(function (){
         content : function() {
             return $('#popover-trn-signup').html();
         },
+        template : '<div class="popover trn-sign-up-popover" role="tooltip"><h3 class="popover-title"></h3><div class="popover-content trn-sign-up-popover-content"></div></div>',
         placement : 'bottom',
         trigger : 'click'
     });

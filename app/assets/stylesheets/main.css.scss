@@ -133,7 +133,7 @@ $image-size: 35px;
   border-bottom-color: black;
 }
 
-.popover-content{
+.attend-popover-content{
   background-color: black;
 }
 
@@ -149,7 +149,6 @@ $image-size: 35px;
 }
 
 .user-popover{
-
   width: 100%;
   padding: 0;
 }
@@ -173,6 +172,7 @@ $image-size: 35px;
 
 .popover-team-row{
   height: 80px;
+  background-color: #F8F8F8;
 }
 
 .popover-team-header{
@@ -793,6 +793,13 @@ footer .footer-below {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+
+.trn-sign-up-popover{
+  background-color: #F8F8F8 !important;
+  width: 250px;
+  padding: 0;
+  text-align: center;
 }
 
 /*!
