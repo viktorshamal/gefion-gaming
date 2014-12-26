@@ -1,0 +1,6 @@
+var popover = $('#btn-trn-signup-<%= @tournament.id %>');
+
+popover.popover('show');
+$('#trn-teams-<%= @tournament.id %>').replaceWith("<%= escape_javascript(render partial: 'tournament_teams/teams', locals: {:tournament => @tournament}) %>");
+popover.attr('data-content','<%= escape_javascript(render partial: 'tournament_teams/signup', locals: {:tournament => @tournament}) %>').data('bs.popover').setContent();
+popover.popover('hide');

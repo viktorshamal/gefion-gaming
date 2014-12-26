@@ -91,11 +91,11 @@ $(document).ready(function (){
         trigger : 'hover'
     });
 
-    $('#btn-trn-signup').popover({
+    $('[data-toggle="popover"]').popover({
         html: true,
-        content : function() {
+        /*content : function() {
             return $('#popover-trn-signup').html();
-        },
+        },*/
         template : '<div class="popover trn-sign-up-popover" role="tooltip"><h3 class="popover-title"></h3><div class="popover-content trn-sign-up-popover-content"></div></div>',
         placement : 'bottom',
         trigger : 'click'

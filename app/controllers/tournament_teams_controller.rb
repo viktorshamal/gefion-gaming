@@ -11,7 +11,8 @@ class TournamentTeamsController < ApplicationController
 
     respond_to do |format|
       format.html {redirect_to :back}
-      format.js
+      format.js {render 'tournament_teams/update_ui'
+      }
     end
   end
 
@@ -21,7 +22,8 @@ class TournamentTeamsController < ApplicationController
 
     respond_to do |format|
       format.html {redirect_to :back}
-      format.js
+      format.js {render 'tournament_teams/update_ui'
+      }
     end
   end
 end

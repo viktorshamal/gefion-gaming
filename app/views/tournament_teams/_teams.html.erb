@@ -1,4 +1,4 @@
-<div id="trn-teams">
+<div id="trn-teams-<%= tournament.id %>">
   <% tournament.teams.each do |team| %>
       <div id="trn-team-<%= team.id %>">
           <% if current_user %>

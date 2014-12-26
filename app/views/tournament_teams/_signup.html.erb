@@ -1,4 +1,5 @@
 <% if tournament and current_user%>
+ <div id="menu-teams-<%= tournament.id %>">
   <% current_user.teams.each do |team|%>
       <% unless tournament.teams.include?(team)%>
           <div id="menu-team-<%= team.id%>">
@@ -23,6 +24,7 @@
               </div>
             </div>
           </div>
+       </div>
       <% end %>
   <% end %>
 <% end %>
