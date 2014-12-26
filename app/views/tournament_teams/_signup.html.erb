@@ -6,7 +6,7 @@
             <div class="line-separator"></div>
             <div class="popover-team-row orange-row">
               <p><%= team.name %><%= link_to tournament_teams_path(:team_id => team.id, :tournament_id => tournament.id), method: :post, :remote => true do %>
-                    <i class="fa fa-times"></i>
+                    <i class="fa fa-plus"></i>
                 <% end %>
               </p>
               <div class="team-users-icons">

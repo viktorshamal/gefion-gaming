@@ -39,7 +39,9 @@
                           <br>
                           <div class="row">
                             <div class="form-group col-xs-12">
-                              <button data-toggle="popover" data-content = '<%= render partial: 'tournament_teams/signup', locals: {:tournament => tournament} %>' type="button" id="btn-trn-signup-<%= tournament.id %>" class="btn btn-lg btn-success">Tilmed turnering</button>
+                              <% if current_user %>
+                                <button data-toggle="popover" data-content = '<%= render partial: 'tournament_teams/signup', locals: {:tournament => tournament} %>' type="button" id="btn-trn-signup-<%= tournament.id %>" class="btn btn-lg btn-success">Tilmed turnering</button>
+                              <% end %>
                             </div>
                           </div>
                           </form>
