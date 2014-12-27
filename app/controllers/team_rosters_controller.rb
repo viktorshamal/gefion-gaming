@@ -2,22 +2,20 @@ class TeamRostersController < ApplicationController
   def create
 
     @team = Team.find(params[:team_id])
-    @user = User.find(params[:user_id])
     password = params[:password]
     tr = Teamroster.new
 
-    @teamcount = @user.teams.count
+    @teamcount = current_user.teams.count
 
     if @teamcount < 5
-
       if @team.has_password?
         if @team.password == password
           tr.team_id = @team.id
-          tr.user_id = @user.id
+          tr.user_id = current_user.id
         end
       else
         tr.team_id = @team.id
-        tr.user_id = @user.id
+        tr.user_id = current_user.id
       end
 
       raise 'error' unless tr.save
@@ -27,7 +25,7 @@ class TeamRostersController < ApplicationController
 
     respond_to do |format|
       format.html {redirect_to :back}
-      format.js
+      format.js {render 'team_rosters/updateui'}
     end
   end
 
@@ -42,7 +40,7 @@ class TeamRostersController < ApplicationController
 
     respond_to do |format|
       format.html {redirect_to :back}
-      format.js
+      format.js {render 'team_rosters/updateui'}
     end
   end
 

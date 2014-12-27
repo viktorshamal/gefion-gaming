@@ -211,12 +211,17 @@ $image-size: 35px;
   margin-top: 40px;
 }
 .tt-suggestion {
+  width: 30%;
+  min-width: 100px;
+  padding: 10px 0 10px;
   display: inline-block;
-  padding: 3px 20px;
   font-size: 18px;
   line-height: 24px;
   text-align: center;
-  padding: 10px 0px 10px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .tt-suggestion:hover{
@@ -240,6 +245,7 @@ $image-size: 35px;
   background-color: #E07B3E;
   border-radius: 10px;
 }
+
 .xp-holder h4{
   margin-top: 2px;
   text-align: left;
@@ -261,6 +267,10 @@ $image-size: 35px;
   margin-right:5%;
   float: right;
   width: 40%;
+}
+
+.team-icon{
+  width: 50px;
 }
 
 #user-info-toggle{

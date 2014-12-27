@@ -1,3 +1,4 @@
+<!-- Holdtilmelding -->
 <div class="modal fade team-modal" id="join-team-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content team-modal-content">
@@ -17,6 +18,8 @@
     </div>
   </div>
 </div>
+
+<!-- Password -->
 <div class="modal fade" id="team-password-modal">
   <div class="modal-content team-form-div" style="">
     <div class="modal-body">
@@ -33,6 +36,8 @@
     </div>
   </div>
 </div>
+
+<!-- Skab et hold -->
 <div class="modal fade team-modal" id="create-team-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content team-modal-content">
@@ -43,9 +48,9 @@
       <div class="modal-body">
         <div class="floating-label-form-group form-group">
           <%= form_tag(controller: 'teams', method: 'get', class:'') do %>
-              <%= text_field_tag 'name', nil, placeholder: 'Navn'%>
+              <%= text_field_tag 'name', nil, placeholder: 'Navn', autocomplete: 'off'%>
               <br>
-              <%= password_field_tag 'password', nil, placeholder: 'Password (valgfrit)' %>
+              <%= password_field_tag 'password', nil, placeholder: 'Password (valgfrit)', autocomplete: 'off' %>
               </div>
 
           </div>

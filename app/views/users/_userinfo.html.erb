@@ -18,7 +18,7 @@
     <div class="col-xs-2 col-xs-offset-2">
       <button data-tooltip="tooltip" data-target="#join-team-modal" data-toggle="modal" data-placement="bottom" title="Holdtilmelding" class="team-button"><i class="fa fa-users"></i></button>
     </div>
-    <div class="remaining-teams col-xs-4"><h6><%= current_user.teams.count %> / 5 hold</h6></div>
+    <div id="remaining-teams" class= "col-xs-4"><h6><%= current_user.teams.count %> / 5 hold</h6></div>
     <div class="col-xs-2">
       <button data-tooltip="tooltip" data-target="#create-team-modal" data-toggle="modal" data-placement="bottom" title="Skab et hold" class="team-button"><i class="fa fa-plus"></i></button>
     </div>

@@ -8,6 +8,7 @@ class TeamsController < ApplicationController
       password = params[:password]
       @team = Team.new
       @team.name = params[:name]
+      @team.owner_id=current_user.id
       if password
         @team.password = password
       end
@@ -21,7 +22,7 @@ class TeamsController < ApplicationController
     
     respond_to do |format|
       format.html { render json: @suggestions.map { |team| {:name => team.name, :id => team.id, :hasPass => team.has_password?}} }
-      format.json { render json: @suggestions.map { |team| {:name => team.name, :id => team.id, :hasPass => team.has_password?}} }
+      format.json { render json: @suggestions.map { |team| {:name => team.name, :id => team.id, :hasPass => team.has_password?, :owner_uid => team.get_owner.uid}} }
     end
   end
 

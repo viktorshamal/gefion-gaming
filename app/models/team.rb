@@ -8,4 +8,8 @@ class Team < ActiveRecord::Base
   def has_password?
     self.password ? @has_password = true : @has_password = false
   end
+
+  def get_owner
+    User.find(self.owner_id)
+  end
 end
