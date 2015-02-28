@@ -13,45 +13,47 @@
               <div class="modal-body">
                 <h2><%= game.name%></h2>
                 <hr class="star-primary star-modal">
-                <div class="col-lg-8 col-lg-offset-2">
-                  <form role="form">
-                    <div class="row">
-                      <% tournament = game.next_tournament %>
-                      <% if tournament %>
+                  <% tournament = game.next_tournament %>
+                  <% if tournament %>
+                    <div class="col-lg-8 col-lg-offset-2">
+                      <form role="form">
+                        <div class="row">
                           <h3>Næste turnering</h3>
                           <div class="row">
-                            <div class="col-md-4" >
-                                <h5>Max antal spillere: <%= tournament.maxplayers %></h5>
-                            </div>
-                            <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" title="Ingen regler">
+
+                            <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" title="Ingen oplyste regler">
                                <h5>Regler <i class="fa fa-chevron-down"></i></h5>
                             </div>
-                            <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" title="Ingen belønninger">
+                            <div class="col-md-4" >
+                              <h5>Max <%= tournament.maxplayers %> spillere</h5>
+                            </div>
+                            <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" title="Ingen oplyste belønninger">
                                 <h5>Belønninger <i class="fa fa-chevron-down"></i></h5>
                             </div>
                           </div>
-
                           <p>Tilmeldte</p>
                           <div class="line-separator"></div>
                             <%= render partial: 'tournament_teams/teams', locals: {:tournament => tournament} %>
-                          </div>
-                          <br>
-                          <div class="row">
-                            <div class="form-group col-xs-12">
-                              <% if current_user %>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="form-group col-xs-12">
+                            <% if current_user %>
                                 <button data-toggle="popover" data-content = '<%= render partial: 'tournament_teams/signup', locals: {:tournament => tournament} %>' type="button" id="btn-trn-signup-<%= tournament.id %>" class="btn btn-lg btn-success">Tilmed turnering</button>
-                              <% end %>
-                            </div>
+                            <% end %>
                           </div>
-                          </form>
-                          </div>
-                          <ul class="list-inline item-details">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="">
+                        <ul class="list-inline item-details">
                             <li>Platform: <strong><%= game.platforms %></strong>
                             </li>
                             <li>Tid: <strong><%=tournament.tournament_date.strftime('%H:%M, %e. %B') %></strong>
                             </li>
-                          </ul>
-                      <% end %>
+                        </ul>
+                    </div>
+                  <% end %>
                 <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
               </div>
             </div>

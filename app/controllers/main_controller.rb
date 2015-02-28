@@ -12,7 +12,7 @@ class MainController < ApplicationController
       #@receipts = @alerts.first.receipts_for current_user
     end
 
-    @graph = Koala::Facebook::API.new('CAACEdEose0cBAI1V4NTrcMiAfFl2pT67fXnzOPrLEIXrZBCqDkWGH3iSdCW8QN0XZAzqkZAyqYcLaosC66YuV53u0tatzUKx1vqS68TzJr5snHOklEDdvXXHMwsXHZAv2EYCmGxPyP6wVlcQw9fNZC3sqLj8rOE8JK02PZCxdh6V82yLEUBZB9qTD3o6IUGESD8KfasKsG8nvP4TsoZBMEAz8CJmRf74eDYZD')
+    @graph = Koala::Facebook::API.new('280813985423323|lhjk41XXweokQ69YCzaDR-JnWek')
 
     @event = @graph.get_object('1544292902497202')
 

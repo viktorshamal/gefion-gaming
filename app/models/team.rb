@@ -4,6 +4,7 @@ class Team < ActiveRecord::Base
   has_many :tournament_teams
 
   validates_uniqueness_of :name
+  validates_length_of :name, :minimum => 3, :maximum => 15
 
   def has_password?
     self.password ? @has_password = true : @has_password = false
