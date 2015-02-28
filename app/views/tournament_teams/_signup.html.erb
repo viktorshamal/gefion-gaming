@@ -1,7 +1,7 @@
 <% if tournament and current_user%>
  <div id="menu-teams-<%= tournament.id %>">
   <% current_user.teams.each do |team|%>
-      <% unless (tournament.players & team.users) == team.users%>
+      <% unless (tournament.players - team.users).count < tournament.players.count%>
           <div id="menu-team-<%= team.id%>">
             <div class="line-separator"></div>
             <div class="popover-team-row orange-row">
