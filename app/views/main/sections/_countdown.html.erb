@@ -6,6 +6,11 @@
         <hr class="star-light star-about">
       </div>
     </div>
+    <div id="playing-now" class="row" style="display: none">
+      <div class="col-lg-12 col-lg-6-offset text-center">
+        <h2>Lige Nu</h2>
+      </div>
+    </div>
     <div class="row">
       <div class="col-lg-2 col-lg-2-offset"></div>
       <% [%w(dag dage days), %w(time timer hours), %w(minut minutter minutes), %w(sekund sekunder seconds)].each do |unit| %>
@@ -16,20 +21,22 @@
       <% end %>
 
       <div class="col-lg-8 col-lg-offset-2 text-center">
-        <h4>Tilmelding</h4>
-        <!--<div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-lg btn-outline">
-            <input type="radio" name="radio-attendance" id="radio-attending" value="attending"> Ja
-          </label>
-          <label class="btn btn-lg btn-outline">
-            <input type="radio" name="radio-attendance" id="radio-maybe" value ="maybe"> Måske
-          </label>
-          <label class="btn btn-lg btn-outline">
-            <input type="radio" name="radio-attendance" id="radio-declined" value="declined"> Nej
-          </label>
-        </div>-->
-        <input type="checkbox" name="button-attendance" id="attend-button">
-        <label class="btn btn-lg btn-outline" id="attend-button-label" for="attend-button"> Tilmeld</label>
+        <!-- <h4>Tilmelding</h4>
+         <div class="btn-group" data-toggle="buttons">
+           <label class="btn btn-lg btn-outline">
+             <input type="radio" name="radio-attendance" id="radio-attending" value="attending"> Ja
+           </label>
+           <label class="btn btn-lg btn-outline">
+             <input type="radio" name="radio-attendance" id="radio-maybe" value ="maybe"> Måske
+           </label>
+           <label class="btn btn-lg btn-outline">
+             <input type="radio" name="radio-attendance" id="radio-declined" value="declined"> Nej
+           </label>
+         </div>-->
+        <form action="https://www.facebook.com/events/<%= @event['id'] %>">
+          <input type="submit" name="button-attendance" id="attend-button">
+          <label class="btn btn-lg btn-outline" id="attend-button-label" for="attend-button"> Tilmeld</label>
+        </form>
         <br/>
         <p id="attending-list">Hvem kommer?</p>
       </div>

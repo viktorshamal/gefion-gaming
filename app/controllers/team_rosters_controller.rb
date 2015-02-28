@@ -1,9 +1,9 @@
 class TeamRostersController < ApplicationController
   def create
+    tr = Teamroster.new
 
     @team = Team.find(params[:team_id])
     password = params[:password]
-    tr = Teamroster.new
 
     @teamcount = current_user.teams.count
 

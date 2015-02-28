@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3275563943">
+  <component name="DataSourceManagerImpl" format="xml" hash="3827590082">
     <data-source source="LOCAL" name="Rails gaming: development" uuid="526527a5-31db-4a81-b563-6fb9792186e9">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

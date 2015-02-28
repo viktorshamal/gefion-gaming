@@ -12,23 +12,23 @@
             <div class="col-lg-8 col-lg-offset-2">
               <div class="modal-body">
                 <h2><%= game.name%></h2>
-                <hr class="star-primary">
+                <hr class="star-primary star-modal">
                 <div class="col-lg-8 col-lg-offset-2">
                   <form role="form">
                     <div class="row">
                       <% tournament = game.next_tournament %>
                       <% if tournament %>
                           <h3>Næste turnering</h3>
-
+                          <%= tournament.players %>
                           <div class="row">
-                            <div class="col-md-4">
-                                Turnstyle
+                            <div class="col-md-4" >
+                                <h5>Max antal spillere: <%= tournament.maxplayers %></h5>
                             </div>
-                            <div class="col-md-4">
-                                Rules
+                            <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" title="Ingen regler">
+                               <h5>Regler <i class="fa fa-chevron-down"></i></h5>
                             </div>
-                            <div class="col-md-4">
-                                Rewards
+                            <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" title="Ingen belønninger">
+                                <h5>Belønninger <i class="fa fa-chevron-down"></i></h5>
                             </div>
                           </div>
 

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Rails gaming: development" uuid="526527a5-31db-4a81-b563-6fb9792186e9">
+  <data-source name="Rails gaming: development" uuid="526527a5-31db-4a81-b563-6fb9792186e9">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
-  <data-source source="LOCAL" name="Rails gaming: test" uuid="9a474f20-1b6c-4f7e-a8f6-1025c5b734c0">
+  <data-source name="Rails gaming: test" uuid="9a474f20-1b6c-4f7e-a8f6-1025c5b734c0">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
-  <data-source source="LOCAL" name="Rails gaming: production" uuid="3a9eda65-65cf-466f-acbb-11302fbd94c7">
+  <data-source name="Rails gaming: production" uuid="3a9eda65-65cf-466f-acbb-11302fbd94c7">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
-  <data-source source="LOCAL" name="Rails gaming: cucumber" uuid="326d0e08-8dfb-4b95-b924-cf0c9101940f">
+  <data-source name="Rails gaming: cucumber" uuid="326d0e08-8dfb-4b95-b924-cf0c9101940f">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>

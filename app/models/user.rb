@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
 
   acts_as_messageable
 
-  def mailboxer_email(object)
-    return "string"
+  def mailboxer_email
+    'string'
   end
 
   def self.from_omniauth(auth)

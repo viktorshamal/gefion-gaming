@@ -12,17 +12,16 @@ class MainController < ApplicationController
       #@receipts = @alerts.first.receipts_for current_user
     end
 
-    @graph = Koala::Facebook::API.new('CAADZCZAhnZAX9sBAOB2ZADLrZCgnfG0fsY5DpQO05ycgRdOmPXYoJyjPIEx5FSBsQpCeRjigHjDD4drNzOz8IDJTQlL9uPjvmkKPlUY7vpeqHYNqj1syB5krUHQPEgQPjmZBP8BCEQiQVyIWOXSNj8IPBbk07P8IjKpiFco6HFFAyu1qD5VPUN6bEBYFZA2pmgZD')
+    @graph = Koala::Facebook::API.new('CAACEdEose0cBAI1V4NTrcMiAfFl2pT67fXnzOPrLEIXrZBCqDkWGH3iSdCW8QN0XZAzqkZAyqYcLaosC66YuV53u0tatzUKx1vqS68TzJr5snHOklEDdvXXHMwsXHZAv2EYCmGxPyP6wVlcQw9fNZC3sqLj8rOE8JK02PZCxdh6V82yLEUBZB9qTD3o6IUGESD8KfasKsG8nvP4TsoZBMEAz8CJmRf74eDYZD')
 
-    event = @graph.get_object('506292156140866')
+    @event = @graph.get_object('1544292902497202')
 
-    gon.eventtime = event['start_time']
-    gon.eventid = event['id']
+    gon.eventtime = @event['start_time']
+    gon.eventid = @event['id']
 
     @attending = @graph.get_connections(gon.eventid, 'attending')
 
 
 
   end
-
 end
