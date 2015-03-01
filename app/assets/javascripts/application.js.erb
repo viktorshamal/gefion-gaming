@@ -41,6 +41,7 @@ $(document).ready(function (){
     function updateTime(){
         var countdownToParty = countdown(Date.now(),new Date(gon.eventtime));
         if (countdownToParty.value > 0){
+            $('#countdown-box').show();
             $('.unit').each(function () {
                 var count = countdownToParty[$(this).data('count')];
                 var singular = $(this).data('singular');
@@ -59,8 +60,9 @@ $(document).ready(function (){
                     }
                 });
             });
-        }else
-        {
+        }else if(countdownToParty.value < -36000000) {
+            $('#more-info').show();
+        }else{
             $('#playing-now').show();
         }
 

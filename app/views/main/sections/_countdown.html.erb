@@ -11,7 +11,12 @@
         <h2>Lige Nu</h2>
       </div>
     </div>
-    <div class="row">
+    <div id="more-info" class="row" style="display: none">
+      <div class="col-lg-12 col-lg-6-offset text-center">
+        <h4>Mere info følger</h4>
+      </div>
+    </div>
+    <div id ='countdown-box' class="row" style="display: none">
       <div class="col-lg-2 col-lg-2-offset"></div>
       <% [%w(dag dage days), %w(time timer hours), %w(minut minutter minutes), %w(sekund sekunder seconds)].each do |unit| %>
           <div class="col-lg-2 text-center unit" data-count = '<%= unit[2] %>' data-singular = '<%= unit[0] %>' data-plural = '<%= unit[1] %>'>
@@ -35,14 +40,25 @@
          </div>-->
         <form action="https://www.facebook.com/events/<%= @event['id'] %>">
           <input type="submit" name="button-attendance" id="attend-button">
-          <label class="btn btn-lg btn-outline" id="attend-button-label" for="attend-button"> Tilmeld</label>
+          <label class="btn btn-lg btn-outline" id="attend-button-label" for="attend-button">Tilmeld</label>
         </form>
         <br/>
-        <p id="attending-list">Hvem kommer?</p>
+        <p id="attending-list">Hvem kommer? <i class="fa fa-chevron-down"></i></p>
       </div>
     </div>
   </div>
 </section>
+
+<div id = "attending-list-tooltip" class="text-center" style="display: none">
+  <% @attending.first(15).each_with_index do |x,i| %>
+      <h6><%= x["name"] %></h6>
+      <% if i==10 %>
+          <h6>... og <%= @attending.count - 4 %> andre ...</h6>
+          <% break %>
+      <%end %>
+  <% end %>
+
+</div>
 
 <!-- Hidden attending popovers -->
 <div id="attend-popover" style="display: none">
@@ -51,12 +67,5 @@
     <input type="radio" name="radio-attendance" class="radio-attendance" id ="radio-maybe" value = "maybe">
     <input type="radio" name="radio-attendance" class="radio-attendance" id ="radio-decline" value = "declined">
   </form>
-</div>
-
-<div id = "attending-list-tooltip" class="text-center" style="display: none">
-  <% @attending.first(15).each do |x| %>
-      <h6><%= x["name"] %></h6>
-  <% end %>
-  <h6>... og <%= @attending.count - 15 %> andre ...</h6>
 </div>
 <!-- end -->
