@@ -3,6 +3,9 @@ class Tournament < ActiveRecord::Base
   has_many :tournament_teams
   has_many :teams, through: :tournament_teams
 
+  has_many :tournament_attendances
+  has_many :users, through: :tournament_attendances
+
   def players
     self.teams.map(&:users).flatten
   end

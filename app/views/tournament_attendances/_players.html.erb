@@ -1,0 +1,7 @@
+<div id="trn-users-<%= tournament.id %>">
+    <% tournament.users.each do |user| %>
+        <div id="trn-user-<%= "#{tournament.id}-#{user.id}"%>" class="col-xs-1">
+          <a data-tooltip="tooltip" data-placement="bottom" title="<%= user.name %>" ><img class="img-rounded profile-img" height="25px" src="http://graph.facebook.com/<%= user.uid %>/picture"></a>
+        </div>
+    <% end %>
+</div>

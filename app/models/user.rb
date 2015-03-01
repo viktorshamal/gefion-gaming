@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   has_many :teamrosters
   has_many :teams, through: :teamrosters
 
+  has_many :tournament_attendances
+  has_many :tournaments, through: :tournament_attendances
+
   acts_as_messageable
 
   def mailboxer_email

@@ -1,0 +1,2 @@
+$('#trn-users-<%= @tournament.id %>').replaceWith("<%= escape_javascript(render partial: 'tournament_attendances/players', locals: {:tournament => @tournament}) %>");
+$('#user-attend-button-<%= @tournament.id %>').replaceWith("<%= escape_javascript(render partial: 'tournament_attendances/attend_button', locals: {:tournament => @tournament}) %>");

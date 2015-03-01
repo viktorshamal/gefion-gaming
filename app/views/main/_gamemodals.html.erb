@@ -33,13 +33,21 @@
                           </div>
                           <p>Tilmeldte</p>
                           <div class="line-separator"></div>
+                          <% if tournament.player_limit > 1 %>
                             <%= render partial: 'tournament_teams/teams', locals: {:tournament => tournament} %>
+                          <% else %>
+                            <%= render partial: 'tournament_attendances/players', locals: {:tournament => tournament} %>
+                          <% end %>
                         </div>
                         <br>
                         <div class="row">
                           <div class="form-group col-xs-12">
                             <% if current_user %>
-                                <button data-toggle="popover" data-content = '<%= render partial: 'tournament_teams/signup', locals: {:tournament => tournament} %>' type="button" id="btn-trn-signup-<%= tournament.id %>" class="btn btn-lg btn-success">Tilmed turnering</button>
+                                <% if tournament.player_limit > 1 %>
+                                    <button data-toggle="popover" data-content = '<%= render partial: 'tournament_teams/signup', locals: {:tournament => tournament} %>' type="button" id="btn-trn-signup-<%= tournament.id %>" class="btn btn-lg btn-success">Tilmed et hold</button>
+                                <% else %>
+                                    <%= render partial: 'tournament_attendances/attend_button', locals: {:tournament => tournament} %>
+                                <% end %>
                             <% end %>
                           </div>
                         </div>
