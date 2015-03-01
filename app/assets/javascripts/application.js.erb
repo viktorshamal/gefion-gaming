@@ -28,10 +28,6 @@ $(document).ready(function (){
         end
     %>
 
-    //var s = skrollr.init();
-
-
-
     window.image_url = function (name) {
             return <%= imgs.to_json %>[name]
     };
@@ -139,6 +135,7 @@ $(document).ready(function (){
     $(".modal-content, .trn-background").css({
         "background" : function (){
             var url = getCover(this);
+            alert(url);
             return "url(" + url +") no-repeat center center fixed";
         },
         "-webkit-background-size": "cover",
