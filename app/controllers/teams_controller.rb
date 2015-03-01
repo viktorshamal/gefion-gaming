@@ -23,7 +23,7 @@ class TeamsController < ApplicationController
     @suggestions = Team.all - current_user.teams
     
     respond_to do |format|
-      format.html { render json: @suggestions.map { |team| {:name => team.name, :id => team.id, :hasPass => team.has_password?}} }
+      format.html { render json: @suggestions.map { |team| {:name => team.name, :id => team.id, :hasPass => team.has_password?, :owner_uid => team.get_owner.uid}} }
       format.json { render json: @suggestions.map { |team| {:name => team.name, :id => team.id, :hasPass => team.has_password?, :owner_uid => team.get_owner.uid}} }
     end
   end
