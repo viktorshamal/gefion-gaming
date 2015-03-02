@@ -28,6 +28,8 @@ $(document).ready(function (){
         end
     %>
 
+    localStorage.clear();
+
     window.image_url = function (name) {
             return <%= imgs.to_json %>[name]
     };
