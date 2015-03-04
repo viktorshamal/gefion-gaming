@@ -30,7 +30,6 @@ $(document).ready(function (){
 
     localStorage.clear();
 
-
     window.image_url = function (name) {
             return <%= imgs.to_json %>[name]
     };
@@ -88,7 +87,7 @@ $(document).ready(function (){
     });
 
 
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip({html: true});
 
 
     $('#attending-list').popover({

@@ -1,0 +1,8 @@
+<% current_place = 0 %>
+<% tournament.rewards.order(:place).each do |reward|%>
+    <% if current_place != reward.place %>
+        <% current_place = reward.place %>
+        <%=reward.place.ordinalize%>:<br>
+    <% end %>
+    <%= reward.description %><br>
+<% end %>

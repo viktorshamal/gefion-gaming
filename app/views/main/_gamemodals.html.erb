@@ -20,14 +20,13 @@
                         <div class="row">
                           <h3>Næste turnering</h3>
                           <div class="row">
-
-                            <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" title="Ingen oplyste regler">
+                            <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" title="<%= render partial: 'tournaments/rules', locals: {:tournament => tournament} %>">
                                <h5>Regler <i class="fa fa-chevron-down"></i></h5>
                             </div>
-                            <div class="col-md-4" >
+                            <div class="col-md-4"  >
                               <h5>Max <%= tournament.maxplayers %> spillere</h5>
                             </div>
-                            <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" title="Ingen oplyste belønninger">
+                            <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" title="<%= render partial: 'tournaments/rewards', locals: {:tournament => tournament} %>">
                                 <h5>Belønninger <i class="fa fa-chevron-down"></i></h5>
                             </div>
                           </div>
