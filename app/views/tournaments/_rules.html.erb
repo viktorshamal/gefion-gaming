@@ -1,3 +1,6 @@
+<% if tournament.rules.empty? %>
+    Ingen oplyste regler
+<% end %>
 <% tournament.rules.each do |rule|%>
     <%= rule.description %><br>
 <% end %>

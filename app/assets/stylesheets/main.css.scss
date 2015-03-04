@@ -34,7 +34,9 @@ input[type=radio],  select {
   position: fixed;
 }
 
-
+.platform{
+  min-width: 119px;
+}
 
 .trn-header{
   background-color: #f8f8f8;

@@ -1,3 +1,7 @@
+<% if tournament.rewards.empty? %>
+    Ingen oplyste belønninger
+<% end %>
+
 <% current_place = 0 %>
 <% tournament.rewards.order(:place).each do |reward|%>
     <% if current_place != reward.place %>
