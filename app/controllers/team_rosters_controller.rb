@@ -6,8 +6,9 @@ class TeamRostersController < ApplicationController
     password = params[:password]
 
     @teamcount = current_user.teams.count
+    @usercount = @team.users.count
 
-    if @teamcount < 5
+    if @teamcount < 5 && @usercount <5
       if @team.has_password?
         if @team.password == password
           tr.team_id = @team.id
