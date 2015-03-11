@@ -30,6 +30,10 @@ $(document).ready(function (){
 
     localStorage.clear();
 
+    var target = document.location.hash;
+
+    $(target).modal('show');
+
     window.image_url = function (name) {
             return <%= imgs.to_json %>[name]
     };

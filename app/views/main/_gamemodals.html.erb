@@ -1,6 +1,6 @@
 <!-- Portfolio Modals -->
 <% Game.all.each do |game| %>
-    <div class="portfolio-modal modal fade" id="portfolioModal<%= game.id.to_s %>" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="<%= game.tag %>" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-content" data-name = "<%= game.tag %>" >
         <div class="close-modal" data-dismiss="modal">
           <div class="lr">
@@ -46,6 +46,10 @@
                                     <button data-toggle="popover" data-content = '<%= render partial: 'tournament_teams/signup', locals: {:tournament => tournament} %>' type="button" id="btn-trn-signup-<%= tournament.id %>" class="btn btn-lg btn-success">Tilmed et hold</button>
                                 <% else %>
                                     <%= render partial: 'tournament_attendances/attend_button', locals: {:tournament => tournament} %>
+                                <% end %>
+                                <% else %>
+                                <%= link_to "/auth/facebook?display=page&state=" + game.tag, id: "sign_in_" + game.tag do %>
+                                    <button type="button" class="btn btn-lg btn-warning">Log ind for tilmelding</button>
                                 <% end %>
                             <% end %>
                           </div>

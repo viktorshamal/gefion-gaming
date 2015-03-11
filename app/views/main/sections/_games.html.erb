@@ -9,7 +9,7 @@
     <div class="row">
       <% Game.where('visible=true').order(:name).each_with_index do |game| %>
           <div class="col-sm-4 portfolio-item">
-            <%= link_to("#portfolioModal" + game.id.to_s,{ class: "portfolio-link", data: {toggle: "modal"}}) do %>
+            <%= link_to("#" + game.tag,{ class: "portfolio-link", data: {toggle: "modal"}}) do %>
                 <div class="caption">
                   <div class="caption-content">
                     <i class="fa fa-search-plus fa-3x"></i>
