@@ -12,4 +12,14 @@ class Tournament < ActiveRecord::Base
   def players
     self.teams.map(&:users).flatten
   end
+
+  def live_image_uri
+    Challonge::Tournament.find(self.challonge_id)
+  end
+
+  private
+
+  def user_params
+    params.require(:game_id,:tournament_date, :maxplayers, :player_limit,).permit(:challonge_id)
+  end
 end

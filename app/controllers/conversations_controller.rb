@@ -14,6 +14,6 @@ class ConversationsController < ApplicationController
   def notify
     Mailboxer::Notification.notify_all(User.all, params[:body], params[:subject],nil,true,nil,false)
 
-    redirect_to main_index_path
+    redirect_to root_path
   end
 end

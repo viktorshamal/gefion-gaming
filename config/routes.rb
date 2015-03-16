@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get 'tournament_attendances/remove', to:'tournament_attendances#remove'
 
+  get 'tournaments/transfer', to:'tournaments#transfer'
+
   resources :users, :teams, :team_rosters, :tournament_teams, :tournaments, :tournament_attendances
 
   get 'sessions/create'

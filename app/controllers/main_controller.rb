@@ -8,7 +8,7 @@ class MainController < ApplicationController
     if current_user
       gon.uid = current_user.uid
 
-      @alerts = current_user.mailbox.notifications
+      @alerts = current_user.mailbox.notifications(:read => false)
       #@receipts = @alerts.first.receipts_for current_user
     end
 
@@ -20,8 +20,6 @@ class MainController < ApplicationController
     gon.eventid = @event['id']
 
     @attending = @graph.get_connections(gon.eventid, 'attending')
-
-
 
   end
 end

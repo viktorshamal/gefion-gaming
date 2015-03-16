@@ -1,0 +1,8 @@
+<%= form_for @tournament, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+    <%= f.number_field :game_id, placeholder: 'game id' %>
+    <%= f.number_field :maxplayers, placeholder: 'max players' %>
+    <%= f.number_field :player_limit, placeholder: 'max players pr team' %>
+    <%= f.text_field :challonge_id, placeholder: 'challonge id' %>
+    <%= f.datetime_field :tournament_date, placeholder: 'dato' %>
+    <%= f.submit "Create" %>
+<% end %>

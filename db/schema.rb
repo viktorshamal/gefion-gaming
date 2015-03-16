@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303194027) do
+ActiveRecord::Schema.define(version: 20150315112718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 20150303194027) do
     t.integer  "gameid"
     t.string   "gametag"
     t.integer  "player_limit"
+    t.integer  "challonge_id"
   end
 
   create_table "users", force: true do |t|

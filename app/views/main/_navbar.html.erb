@@ -35,7 +35,7 @@
               <a href="#user-section"><i class="fa fa-facebook"></i> <%= current_user.name %></a>
             </li>
             <!--<li class="alert-button">
-              <a id="alert-toggle"><i class="fa fa-bell"></i></a>
+              <a id="alert-toggle"><%= @alerts.count %><i class="fa fa-bell"></i></a>
             </li>-->
         <% else %>
             <li class="dropdown">

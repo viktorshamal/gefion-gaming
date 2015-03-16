@@ -43,6 +43,8 @@ gem 'handlebars_assets'
 
 gem 'mailboxer'
 
+gem 'challonge-api'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

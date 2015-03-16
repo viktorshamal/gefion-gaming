@@ -1,0 +1,15 @@
+<h1>Tournaments</h1>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>players</th>
+  </tr>
+
+  <% @tournaments.each do |tournament| %>
+      <tr>
+        <td><%= tournament.id %></td>
+        <td><%= tournament.players.count %></td>
+      </tr>
+  <% end %>
+</table>
