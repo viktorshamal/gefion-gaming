@@ -3,6 +3,6 @@ class Game < ActiveRecord::Base
   has_many :tournaments
 
   def next_tournament
-    self.tournaments.order(:tournament_date).first
+    self.tournaments.where(:winner_id => nil).order(:tournament_date).first
   end
 end

@@ -1,33 +1,10 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
-//
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
-//= require cbpAnimatedHeader
-//= require classie
-//= require countdown
-//= require freelancer
-//= require twitter/typeahead
-//= require handlebars
-//= require skrollr.min
-//= require jquery.easing.min
 $(document).ready(function (){
-    <%
-        imgs = {}
-        Dir.chdir("#{Rails.root}/app/assets/images/game-images") do
-        imgs = Dir["**"].inject({}) {|h,f| h.merge! f => image_url('game-images/' + f)}
-        end
-    %>
+        <%
+            imgs = {}
+            Dir.chdir("#{Rails.root}/app/assets/images/game-images") do
+                imgs = Dir["**"].inject({}) {|h,f| h.merge! f => image_url('game-images/' + f)}
+            end
+        %>
 
     localStorage.clear();
 
@@ -36,7 +13,7 @@ $(document).ready(function (){
     $(target).modal('show');
 
     window.image_url = function (name) {
-            return <%= imgs.to_json %>[name]
+        return <%= imgs.to_json %>[name]
     };
 
     window.getCover = function (cover){
@@ -137,7 +114,7 @@ $(document).ready(function (){
     });
 
     $('body').tooltip({
-        selector: '[data-tooltip=tooltip]'}
+            selector: '[data-tooltip=tooltip]'}
     );
 
 
