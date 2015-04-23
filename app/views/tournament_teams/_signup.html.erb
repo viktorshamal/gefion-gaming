@@ -9,6 +9,8 @@
                 <%= link_to tournament_teams_path(:team_id => team.id, :tournament_id => tournament.id), method: :post, :remote => true do %>
                     <i class="fa fa-plus"></i>
                 <% end %>
+                <% else %>
+                <i class="fa fa-ban"></i>
             <% end %>
           </p>
           <div class="team-users-icons">
