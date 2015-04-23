@@ -11,7 +11,7 @@ class TournamentAttendancesController < ApplicationController
 
     raise 'error' unless ta.save
 
-    Challonge::Participant.create(:name => @user.id, :tournament => Challonge::Tournament.find(@tournament.challonge_id))
+    #Challonge::Participant.create(:name => @user.id, :tournament => Challonge::Tournament.find(@tournament.challonge_id))
 
     respond_to do |format|
       format.html {redirect_to :back}
@@ -24,7 +24,7 @@ class TournamentAttendancesController < ApplicationController
     @tournament = Tournament.find(params[:tournament_id])
     TournamentAttendance.where('tournament_id = ? AND user_id = ?', params[:tournament_id], params[:user_id]).first.destroy
 
-    Challonge::Participant.find(:all, :params => {:name => params[:user_id], :tournament_id => @tournament.challonge_id})
+    #Challonge::Participant.find(:all, :params => {:name => params[:user_id], :tournament_id => @tournament.challonge_id})
 
     respond_to do |format|
       format.html {redirect_to :back}
