@@ -14,7 +14,7 @@ class MainController < ApplicationController
 
     @graph = Koala::Facebook::API.new('280813985423323|lhjk41XXweokQ69YCzaDR-JnWek')
 
-    @event = @graph.get_object('1544292902497202')
+    @event = @graph.get_object('957225767629260')
 
     gon.eventtime = @event['start_time']
     gon.eventid = @event['id']
