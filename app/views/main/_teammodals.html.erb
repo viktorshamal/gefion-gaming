@@ -47,7 +47,7 @@
       </div>
       <div class="modal-body">
         <div class="floating-label-form-group form-group">
-          <%= form_tag(controller: 'teams', method: 'get', class:'') do %>
+          <%= form_tag 'teams/', :remote => true do %>
               <%= text_field_tag 'name', nil, placeholder: 'Navn', autocomplete: 'off'%>
               <br>
               <%= password_field_tag 'password', nil, placeholder: 'Password (valgfrit)', autocomplete: 'off' %>
@@ -56,7 +56,7 @@
           </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%= submit_tag("Create", class: "btn btn-default-primary") %>
+        <%= submit_tag("Create", class: "btn btn-default-primary btn-create-team") %>
       </div>
       <% end %>
     </div>

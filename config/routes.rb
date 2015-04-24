@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   resources :users, :teams, :team_rosters, :tournament_teams, :tournaments, :tournament_attendances
 
+  post 'teams/' => 'teams#create', :as => :team_create_path
+
   get 'sessions/create'
 
   get 'sessions/destroy'

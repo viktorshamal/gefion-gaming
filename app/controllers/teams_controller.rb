@@ -16,7 +16,14 @@ class TeamsController < ApplicationController
 
       Teamroster.create(:team_id => @team.id, :user_id => current_user.id) if @team.save
     end
-    redirect_to :back
+    respond_to do |format|
+      format.html {redirect_to :back}
+      if @team.save
+        format.js {render 'team_rosters/updateui'}
+      else
+        format.js { render 'errors/warning', locals: {errors: @team.errors.full_messages} }
+      end
+    end
   end
 
   def show

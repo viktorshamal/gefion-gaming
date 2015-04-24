@@ -1,0 +1,2 @@
+$('#error-modal').modal('show');
+$('#errors').replaceWith('<%= escape_javascript(render partial: 'errors/errors', locals: {:errors => errors})%>');
