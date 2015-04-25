@@ -1,7 +1,7 @@
 <div id="trn-teams-<%= tournament.id %>">
   <% tournament.teams.each do |team| %>
       <div id="trn-team-<%= team.id %>">
-        <p><%= team.name %>
+        <p><%= truncate(team.name, :length=>20) %>
           <% if current_user %>
               <% if current_user.teams.include?(team) %>
                   <%= link_to tournament_teams_remove_path(:team_id => team.id, :tournament_id => tournament.id), remote: true, data: {confirm: 'Are you sure?'} do %>

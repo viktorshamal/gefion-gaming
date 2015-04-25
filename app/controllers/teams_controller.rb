@@ -4,24 +4,14 @@ class TeamsController < ApplicationController
   end
 
   def create
-    if current_user && current_user.teams.count < 5
-      password = params[:password]
-      @team = Team.new
-      @team.name = params[:name]
-      @team.owner_id=current_user.id
-      @team.xp = 0
-      if password
-        @team.password = password
-      end
+    team = Team.new(:name => params[:name], :owner_id => current_user.id, :xp => 0, :password => params[:password]) if current_user
 
-      Teamroster.create(:team_id => @team.id, :user_id => current_user.id) if @team.save
-    end
     respond_to do |format|
       format.html {redirect_to :back}
-      if @team.save
-        format.js {render 'team_rosters/updateui'}
+      if team.save
+        format.js { redirect_to team_rosters_create_path(:user_id=>current_user.id, :team_id=>team.id, :password => params[:password]) }
       else
-        format.js { render 'errors/warning', locals: {errors: @team.errors.full_messages} }
+        format.js { render 'errors/warning', locals: {errors: team.errors.full_messages} }
       end
     end
   end

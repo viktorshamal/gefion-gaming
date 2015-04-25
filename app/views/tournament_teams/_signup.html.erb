@@ -4,7 +4,7 @@
         <div class="line-separator"></div>
         <div class="popover-team-row orange-row">
           <p>
-            <%= truncate(team.name, :length => 15) %>
+            <%= truncate(team.name, :length => 12) %>
             <% if (tournament.players - team.users).count == tournament.players.count and team.users.count == tournament.player_limit%>
                 <%= link_to tournament_teams_path(:team_id => team.id, :tournament_id => tournament.id), method: :post, :remote => true do %>
                     <i class="fa fa-plus"></i>

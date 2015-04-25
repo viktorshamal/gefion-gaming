@@ -8,9 +8,7 @@
     <h4>Dine hold</h4>
   </div>
   <div id="menu-teams">
-    <% current_user.teams.each do |team| %>
-        <%= render partial: 'team_rosters/team', locals: {:team => team} %>
-    <% end %>
+        <%= render(partial: 'team_rosters/team', :collection => current_user.teams)  %>
   </div>
   <div class="line-separator"></div>
 
