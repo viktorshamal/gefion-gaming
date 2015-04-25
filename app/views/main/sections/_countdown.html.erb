@@ -38,7 +38,7 @@
              <input type="radio" name="radio-attendance" id="radio-declined" value="declined"> Nej
            </label>
          </div>-->
-        <form action="https://www.facebook.com/events/<%= @event['id'] %>">
+        <form action="https://www.facebook.com/events/<%= @event['id'] %>" target="_blank">
           <input type="submit" name="button-attendance" id="attend-button">
           <label class="btn btn-lg btn-outline" id="attend-button-label" for="attend-button">Event</label>
         </form>
