@@ -5,6 +5,7 @@
     </div>
   </row>
   <div class="popover-team-header">
+
     <h4>Dine hold</h4>
   </div>
   <div id="menu-teams">
@@ -12,6 +13,11 @@
   </div>
   <div class="line-separator"></div>
 
+  <div>
+    <h4 data-tooltip="tooltip" data-placement="bottom" title="<%= current_user.ggp %> GGP fra individiuelle turneringer" >Samlet GGP: <%= current_user.get_ggp %></h4>
+  </div>
+
+  <div class="line-separator"></div>
   <div class="row team-manager-row">
     <div class="col-xs-2 col-xs-offset-2">
       <button data-tooltip="tooltip" data-target="#join-team-modal" data-toggle="modal" data-placement="bottom" title="Holdtilmelding" class="team-button"><i class="fa fa-users"></i></button>

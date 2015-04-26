@@ -16,6 +16,15 @@ class TeamsController < ApplicationController
     end
   end
 
+  def remove
+    Team.find(params[:id]).destroy
+
+    respond_to do |format|
+        format.js { render 'team_rosters/updateui'}
+        format.html {redirect_to root}
+    end
+  end
+
   def show
     @suggestions = Team.all - current_user.teams
     
@@ -31,6 +40,6 @@ class TeamsController < ApplicationController
 
   private
   def team_params
-    params.require(:team).permit(:name, :user)
+    params.require(:team).permit(:name, :user,:xp)
   end
 end

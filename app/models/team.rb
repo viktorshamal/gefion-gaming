@@ -20,4 +20,8 @@ class Team < ActiveRecord::Base
   def get_owner
     User.find(self.owner_id)
   end
+
+  def get_confirm_message
+    self.users.count==1 ? 'Er du sikker? Holdet vil blive slettet, hvis du forlader det.' : 'Er du sikker?'
+  end
 end

@@ -1,7 +1,7 @@
 <div id="menu-team-<%= team.id%>">
   <div class="line-separator"></div>
   <div class="popover-team-row orange-row">
-    <p><%= truncate(team.name, :length => 15) %> <%= link_to team_rosters_remove_path(:team_id => team.id), :remote => true, data: {confirm: 'Are you sure?'} do %>
+    <p><%= truncate(team.name, :length => 15) %> <%= link_to team_rosters_remove_path(:team_id => team.id), :remote => true, data: {confirm: team.get_confirm_message} do %>
           <i class="fa fa-times"></i>
       <% end %>
     </p>
@@ -9,7 +9,7 @@
       <div class="col-md-offset-1 hidden-sm hidden-xs"></div>
       <% team.users.take(5).each do |user| %>
           <div class="col-xs-1">
-            <a data-tooltip="tooltip" data-placement="bottom" title="<%= truncate(user.name, :length=>15) %>" ><img class="img-rounded profile-img" height="25px" src="http://graph.facebook.com/<%= user.uid %>/picture"></a>
+            <a data-tooltip="tooltip" data-placement="bottom" title="<%= truncate(user.name, :length=>30) %>" ><img class="img-rounded profile-img" height="25px" src="http://graph.facebook.com/<%= user.uid %>/picture"></a>
           </div>
       <% end %>
     </div>

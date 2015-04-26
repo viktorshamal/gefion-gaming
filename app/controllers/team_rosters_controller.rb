@@ -14,11 +14,17 @@ class TeamRostersController < ApplicationController
   end
 
   def remove
-    Teamroster.where('user_id = ? AND team_id = ?', current_user.id, params[:team_id]).first.destroy
+    team = Team.find(params[:team_id])
+
+    Teamroster.where('user_id = ? AND team_id = ?', current_user.id, team.id).first.destroy
 
     respond_to do |format|
       format.html {redirect_to :back}
-      format.js {render 'team_rosters/updateui'}
+      if team.users.count == 0
+      format.js { redirect_to team_destroy_path(:id =>team.id)}
+      else
+        format.js {render 'team_rosters/updateui'}
+      end
     end
   end
 

@@ -18,9 +18,13 @@ Rails.application.routes.draw do
 
   get 'tournaments/transfer', to:'tournaments#transfer'
 
+  get 'teams/remove', to: 'teams#remove', :as => :team_destroy
+
   resources :users, :teams, :team_rosters, :tournament_teams, :tournaments, :tournament_attendances
 
   post 'teams/' => 'teams#create', :as => :team_create_path
+
+
 
   get 'sessions/create'
 

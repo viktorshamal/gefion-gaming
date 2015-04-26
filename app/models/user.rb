@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
     'string'
   end
 
+  def get_ggp
+    ggp = self.ggp.to_i
+    self.teams.each { |x| ggp += x.xp unless x.xp.nil? }
+    ggp
+  end
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
