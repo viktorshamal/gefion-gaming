@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'invitations/index'
+
+  get 'invitations/create'
+
   match 'conversations/notify', to: 'conversations#notify', via: [:get,:post]
 
   get 'conversations/new_notify', to: 'conversations#new_notify'
@@ -20,7 +24,9 @@ Rails.application.routes.draw do
 
   get 'teams/remove', to: 'teams#remove', :as => :team_destroy
 
-  resources :users, :teams, :team_rosters, :tournament_teams, :tournaments, :tournament_attendances
+  get 'invitations/remove', to: 'invitations#remove', :as => :invitation_destroy
+
+  resources :users, :teams, :team_rosters, :tournament_teams, :tournaments, :tournament_attendances, :invitations
 
   post 'teams/' => 'teams#create', :as => :team_create_path
 

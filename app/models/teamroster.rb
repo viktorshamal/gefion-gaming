@@ -4,7 +4,8 @@ class Teamroster < ActiveRecord::Base
 
   validates_uniqueness_of :user_id, :scope => :team_id
 
-  validate :five_team_limit, :five_user_limit, :correct_password
+  validate :five_team_limit, :five_user_limit
+  validate :correct_password, unless: :from_invite
 
   def five_team_limit
     errors.add(:base, "You can't be part of more than 5 teams") if User.find(self.user_id).teams.count >= 5
@@ -20,6 +21,10 @@ class Teamroster < ActiveRecord::Base
     if team.has_password?
       errors.add(:base, 'Wrong password') unless team.password == @password
     end
+  end
+
+  def from_invite
+    Invitation.exists?(:team_id=>self.team_id, :user_id=>self.user_id)
   end
 
   def password

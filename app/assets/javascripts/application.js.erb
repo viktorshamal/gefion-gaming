@@ -98,6 +98,16 @@ $(document).ready(function (){
 
     $('[data-toggle="tooltip"]').tooltip({html: true});
 
+    $(document).on("click", ".team-options", function() {
+        $('#menu-team-' + $(this).data('team') + '-options').removeClass("hidden");
+        $('#menu-team-' + $(this).data('team')).addClass("hidden");
+    });
+
+    $(document).on("click", ".team-options-back", function() {
+        $('#menu-team-' + $(this).data('team') + '-options').addClass("hidden");
+        $('#menu-team-' + $(this).data('team')).removeClass("hidden");
+    });
+
 
     $('#attending-list').popover({
         html: true,
@@ -184,6 +194,49 @@ $(document).ready(function (){
     // initialize the bloodhound suggestion engine
     teams.initialize();
 
+    var users = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        limit: 10,
+        cacheKey: "users",
+        ttl: 0,
+        prefetch: {
+            url: '../users/show.json',
+            filter: function (list) {
+                return $.map(list, function (user) {
+                    return {
+                        name: user.name,
+                        uid: user.uid,
+                        id: user.id
+                    };
+                });
+
+            }
+        }
+    });
+
+    users.initialize();
+    $('#user-searcher').typeahead(null, {
+        displayKey: 'name',
+        minLength: 0,
+        source: users.ttAdapter(),
+        templates: {
+            suggestion: Handlebars.compile([
+                '<img class="img-circle own-profile-img" src="http://graph.facebook.com/{{uid}}/picture?height=65&width=65">',
+                '<p>{{name}}</p>',
+                '<i class="fa fa-lock password-lock password-{{hasPass}}"></i>'
+            ].join(''))
+        }
+    }).on('typeahead:selected', function (e, datum) {
+        $('#invite_user_id').val(datum.id);
+        $('#invite-form').submit();
+        $('#invite-team-modal').modal('hide');
+    });
+
+    $(document).on("click", ".team-button-i", function() {
+        $('#invite_team_id').val($(this).data('team'));
+    });
+
     // instantiate the typeahead UI
     $('#team-searcher').typeahead(null, {
         displayKey: 'name',
@@ -196,8 +249,7 @@ $(document).ready(function (){
                 '<i class="fa fa-lock password-lock password-{{hasPass}}"></i>'
             ].join(''))
         }
-    })
-        .on('typeahead:selected', function (e, datum) {
+    }).on('typeahead:selected', function (e, datum) {
             $('#team_id').val(datum.id);
             if(datum.hasPass){
                 $('#join-team-modal').modal('hide');
@@ -207,11 +259,9 @@ $(document).ready(function (){
                 $('#join-team-modal').modal('hide');
                 $('#team-form').submit();
             }
-        })
-        .on('typeahead:closed', function(e, d) {
+        }).on('typeahead:closed', function(e, d) {
             $('#team-searcher').typeahead('open');
-        })
-    ;
+        });
 
     $('#team-form').on('submit', function(){
         $('#team-password-modal').modal('hide');

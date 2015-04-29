@@ -12,11 +12,9 @@
         <%= render(partial: 'team_rosters/team', :collection => current_user.teams)  %>
   </div>
   <div class="line-separator"></div>
-
   <div>
     <h4 data-tooltip="tooltip" data-placement="bottom" title="<%= current_user.ggp %> GGP fra individiuelle turneringer" >Samlet GGP: <%= current_user.get_ggp %></h4>
   </div>
-
   <div class="line-separator"></div>
   <div class="row team-manager-row">
     <div class="col-xs-2 col-xs-offset-2">

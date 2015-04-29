@@ -235,6 +235,10 @@ $image-size: 35px;
   visibility: hidden;
 }
 
+.hidden{
+  display: none;
+}
+
 .password-true{
   visibility: visible !important;
 }
@@ -256,6 +260,17 @@ $image-size: 35px;
 .team-button:hover{
   background-color: #E07B3E;
   border-radius: 10px;
+}
+
+.col-options{
+  margin-top:20px;
+}
+
+.team-options:hover{
+  cursor: pointer;
+}
+.team-options-back:hover{
+  cursor: pointer;
 }
 
 #remaining-teams h6{

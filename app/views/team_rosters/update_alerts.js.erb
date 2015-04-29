@@ -1,0 +1,5 @@
+var popover = $('#alert-toggle');
+
+popover.attr('data-content','<%= escape_javascript(render partial: 'users/alerts') %>').data('bs.popover').setContent();
+
+popover.popover('hide');

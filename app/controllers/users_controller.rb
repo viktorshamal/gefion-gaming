@@ -17,7 +17,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @suggestions = User.all
+
+    respond_to do |format|
+      format.html { render json: @suggestions.map { |team| {:name => team.name, :uid => team.uid} }}
+      format.json { render json: @suggestions.map { |user| {:name => user.name,:id => user.id, :uid => user.uid} }}
+    end
   end
 
   private

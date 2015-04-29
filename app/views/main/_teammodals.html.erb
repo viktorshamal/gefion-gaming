@@ -62,3 +62,27 @@
     </div>
   </div>
 </div>
+
+<!-- Invitér en ven -->
+<div class="modal fade team-modal" id="invite-team-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content team-modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Invitér en ven</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group floating-label-form-group">
+          <input id="user-searcher" placeholder="Søg efter spiller">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= form_tag invitations_path, id:'invite-form', :remote => true do %>
+            <%= hidden_field_tag :team_id, nil, id: 'invite_team_id' %>
+            <%= hidden_field_tag :user_id, nil, id: 'invite_user_id'%>
+        <% end %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

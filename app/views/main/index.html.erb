@@ -10,14 +10,9 @@
 <%= render 'main/sections/countdown' %>
 
 <% if current_user %>
-    <section class="visible-xs mobile-user-wrapper" id="user-section">
-       <%= render 'users/userinfo' %>
-    </section>
+    <%= render 'users/mobile_userinfo' %>
 
-    <div style="display: none">
-      <%= render 'users/userinfo' %>
-      <%= render 'users/alerts' %>
-    </div>
+    <%= render 'users/mobile_alerts'%>
 
     <%= render 'main/teammodals' %>
 <% end %>

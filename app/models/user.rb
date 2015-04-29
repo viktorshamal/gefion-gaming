@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :tournament_attendances
   has_many :tournaments, through: :tournament_attendances
 
+  has_many :invitations
+
   acts_as_messageable
 
   def mailboxer_email

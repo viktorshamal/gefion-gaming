@@ -1,21 +1,34 @@
-<div id="alert-popover">
+<div id="alert-popover" >
   <div class="popover-team-header">
-    <h4>Beskeder</h4>
+    <h4>Invitationer</h4>
+    <div class="line-separator"></div>
   </div>
-  <div class="line-separator"></div>
-  <% if @alerts.count != 0 %>
-      <% @alerts.each do |alert|%>
-          <% unless alert.is_read? current_user %>
-              <div class="orange-row">
-                  <div class="alert-box">
-                    <h6><%= alert.subject %></h6>
-                  </div>
-                  <div class="line-separator"></div>
+  <% if current_user.invitations.count != 0 %>
+      <% current_user.invitations.each do |invite|%>
+          <div class="orange-row">
+              <div class="alert-box">
+                <h6><strong><%= invite.sender.name %></strong> invited you to join <strong><%= invite.team.name %></strong></h6>
               </div>
-          <% end %>
+          </div>
+          <div class="row">
+            <div class="col-md-2 col-md-2-offset">
+            </div>
+            <div class="col-md-4">
+              <%= link_to team_rosters_create_path(:team_id => invite.team.id, :from_invite=>true), :remote => true do %>
+                  <button class="team-button"><%= fa_icon 'check 2x' %></button>
+              <% end %>
+            </div>
+            <div class="col-md-4">
+              <%= link_to invitation_destroy_path(:team_id => invite.team.id, :user_id=> current_user.id), :remote => true do %>
+                  <button class="team-button"><%= fa_icon 'times 2x' %></button>
+              <% end %>
+            </div>
+            <div class="col-md-2 col-md-3-offset">
+            </div>
+          </div>
+          <div class="line-separator"></div>
       <% end %>
   <% else %>
-    <h6>Ingen beskeder</h6>
+    <h6>Ingen invitationer</h6>
   <% end %>
-
 </div>

@@ -1,5 +1,9 @@
+$('#user-section').replaceWith('<%= escape_javascript(render partial: 'users/mobile_userinfo') %>');
+
 var popover = $('#user-info-toggle');
 
 popover.attr('data-content','<%= escape_javascript(render partial: 'users/userinfo') %>').data('bs.popover').setContent();
 popover.popover('show');
+
+
 

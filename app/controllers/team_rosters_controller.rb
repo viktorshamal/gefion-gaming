@@ -5,7 +5,11 @@ class TeamRostersController < ApplicationController
     respond_to do |format|
       if tr.save
         format.html {redirect_to :back}
-        format.js {render 'team_rosters/updateui'}
+        if params[:from_invite]
+          format.js {redirect_to invitation_destroy_path(:team_id=>params[:team_id],:user_id => current_user.id)}
+        else
+          format.js {render 'team_rosters/updateui'}
+        end
       else
         format.html {redirect_to :back}
         format.js {render 'errors/warning', locals: {errors: tr.errors.full_messages} }
@@ -21,7 +25,7 @@ class TeamRostersController < ApplicationController
     respond_to do |format|
       format.html {redirect_to :back}
       if team.users.count == 0
-      format.js { redirect_to team_destroy_path(:id =>team.id)}
+        format.js { redirect_to team_destroy_path(:id =>team.id)}
       else
         format.js {render 'team_rosters/updateui'}
       end
