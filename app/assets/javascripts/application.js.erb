@@ -155,6 +155,8 @@ $(document).ready(function (){
         "background-size": "cover"
     });
 
+    $('#user-info-toggle').popover('show');
+
     $(document).on("click", ".team-options", function() {
         alert('hello');
         $('#menu-team-' + $(this).data('team') + '-options').removeClass("hidden");
