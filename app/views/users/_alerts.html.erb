@@ -1,4 +1,4 @@
-<div id="alert-popover" >
+<div id="alert-popover">
   <div class="popover-team-header">
     <h4>Invitationer</h4>
     <div class="line-separator"></div>
@@ -15,12 +15,12 @@
             </div>
             <div class="col-md-4">
               <%= link_to team_rosters_create_path(:team_id => invite.team.id, :from_invite=>true), :remote => true do %>
-                  <button class="team-button"><%= fa_icon 'check 2x' %></button>
+                  <button tabindex='0' class="team-button"><%= fa_icon 'check 2x' %></button>
               <% end %>
             </div>
             <div class="col-md-4">
               <%= link_to invitation_destroy_path(:team_id => invite.team.id, :user_id=> current_user.id), :remote => true do %>
-                  <button class="team-button"><%= fa_icon 'times 2x' %></button>
+                  <button tabindex='0' class="team-button"><%= fa_icon 'times 2x' %></button>
               <% end %>
             </div>
             <div class="col-md-2 col-md-3-offset">

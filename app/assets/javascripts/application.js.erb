@@ -98,15 +98,8 @@ $(document).ready(function (){
 
     $('[data-toggle="tooltip"]').tooltip({html: true});
 
-    $(document).on("click", ".team-options", function() {
-        $('#menu-team-' + $(this).data('team') + '-options').removeClass("hidden");
-        $('#menu-team-' + $(this).data('team')).addClass("hidden");
-    });
 
-    $(document).on("click", ".team-options-back", function() {
-        $('#menu-team-' + $(this).data('team') + '-options').addClass("hidden");
-        $('#menu-team-' + $(this).data('team')).removeClass("hidden");
-    });
+
 
 
     $('#attending-list').popover({
@@ -165,6 +158,27 @@ $(document).ready(function (){
         "-o-background-size": "cover",
         "background-size": "cover"
     });
+
+    $('.dropdown').on("click", ".team-options", function() {
+        $('#menu-team-' + $(this).data('team') + '-options').removeClass("hidden");
+        $('#menu-team-' + $(this).data('team')).addClass("hidden");
+    });
+
+    $('.dropdown').on("click", ".team-options-back", function() {
+        $('#menu-team-' + $(this).data('team') + '-options').addClass("hidden");
+        $('#menu-team-' + $(this).data('team')).removeClass("hidden");
+    });
+
+    /*$( ".team-options" ).on( "click", function() {
+        alert('hello');
+        $('#menu-team-' + $(this).data('team') + '-options').removeClass("hidden");
+        $('#menu-team-' + $(this).data('team')).addClass("hidden");
+    });
+
+    $( ".team-options-back" ).on( "click", function() {
+        $('#menu-team-' + $(this).data('team') + '-options').addClass("hidden");
+        $('#menu-team-' + $(this).data('team')).removeClass("hidden");
+    });*/
 
     // Twitter typeahead exmaple.
 
