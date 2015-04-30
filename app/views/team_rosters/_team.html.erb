@@ -8,7 +8,7 @@
         <p><%= truncate(team.name, :length => 15) %></p>
       </div>
       <div class="col-xs-2">
-        <a data-team="<%= team.id %>" class="team-options"><i class="fa fa-cogs"></i></a>
+        <button data-team="<%= team.id %>" class="btn-opaque team-options"><i class="fa fa-cogs"></i></button>
       </div>
     </div>
     <div class="team-users-icons">
@@ -36,7 +36,7 @@
           <p> <%= team.name %></p>
         </div>
         <div class="col-xs-2 ">
-          <a data-team="<%= team.id %>" class="team-options-back"><i class="fa fa-undo"></i></a>
+          <button data-team="<%= team.id %>" class="btn-opaque team-options-back"><i class="fa fa-undo"></i></button>
         </div>
       </div>
         <div class="row">

@@ -99,9 +99,6 @@ $(document).ready(function (){
     $('[data-toggle="tooltip"]').tooltip({html: true});
 
 
-
-
-
     $('#attending-list').popover({
         html: true,
         content : function() {
@@ -147,7 +144,6 @@ $(document).ready(function (){
         selector: '[data-tooltip=tooltip]'}
     );
 
-
     $(".modal-content, .trn-background").css({
         "background" : function (){
             var url = getCover(this);
@@ -159,12 +155,12 @@ $(document).ready(function (){
         "background-size": "cover"
     });
 
-    $('.dropdown').on("click", ".team-options", function() {
+    $(document).on("click", ".team-options", function() {
         $('#menu-team-' + $(this).data('team') + '-options').removeClass("hidden");
         $('#menu-team-' + $(this).data('team')).addClass("hidden");
     });
 
-    $('.dropdown').on("click", ".team-options-back", function() {
+    $(document).on("click", ".team-options-back", function() {
         $('#menu-team-' + $(this).data('team') + '-options').addClass("hidden");
         $('#menu-team-' + $(this).data('team')).removeClass("hidden");
     });

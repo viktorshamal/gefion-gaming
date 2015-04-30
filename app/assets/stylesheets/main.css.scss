@@ -273,6 +273,11 @@ $image-size: 35px;
   cursor: pointer;
 }
 
+.btn-opaque{
+  background: none !important;
+  border: none !important;
+}
+
 #remaining-teams h6{
   margin-top: 5%;
 }
