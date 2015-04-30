@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f88d0f83-9f50-4022-914d-cadf02b03a30" name="Default" comment="maybe fixed js&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/team_rosters/_team.html.erb" afterPath="$PROJECT_DIR$/app/views/team_rosters/_team.html.erb" />
+    <list default="true" id="f88d0f83-9f50-4022-914d-cadf02b03a30" name="Default" comment="maybe fixed js this time&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/main.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/main.css.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gaming.iws" />
@@ -69,8 +67,8 @@
       <file leaf-file-name="application.js.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6104651" vertical-offset="2160" max-vertical-offset="4455">
-              <caret line="165" column="7" selection-start-line="165" selection-start-column="7" selection-end-line="165" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.40697673" vertical-offset="2160" max-vertical-offset="4470">
+              <caret line="158" column="20" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -993,7 +991,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430388912210</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="maybe fixed js this time&#10;">
+      <created>1430390691022</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1430390691022</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1059,7 +1063,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="validate name and passwoRD;;;;;" />
     <MESSAGE value="unbroke everything" />
     <MESSAGE value="5 users shown now" />
     <MESSAGE value="updated event&#10;" />
@@ -1084,7 +1087,8 @@
     <MESSAGE value="added invitations" />
     <MESSAGE value="more invite" />
     <MESSAGE value="maybe fixed js&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="maybe fixed js&#10;" />
+    <MESSAGE value="maybe fixed js this time&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="maybe fixed js this time&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1461,8 +1465,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6104651" vertical-offset="2160" max-vertical-offset="4455">
-          <caret line="165" column="7" selection-start-line="165" selection-start-column="7" selection-end-line="165" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.40697673" vertical-offset="2160" max-vertical-offset="4470">
+          <caret line="158" column="20" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="20" />
           <folding />
         </state>
       </provider>

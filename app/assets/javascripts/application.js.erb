@@ -156,6 +156,7 @@ $(document).ready(function (){
     });
 
     $(document).on("click", ".team-options", function() {
+        alert('hello');
         $('#menu-team-' + $(this).data('team') + '-options').removeClass("hidden");
         $('#menu-team-' + $(this).data('team')).addClass("hidden");
     });
