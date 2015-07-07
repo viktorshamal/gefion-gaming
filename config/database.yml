@@ -4,7 +4,7 @@ development:
   host: localhost
   database: gaming_development
   pool: 5
-  username: postgres
+  username: shamal
   password: google
 
 test: &TEST

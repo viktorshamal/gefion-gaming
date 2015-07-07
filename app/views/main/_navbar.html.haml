@@ -1,0 +1,41 @@
+/ Navigation
+%nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header.page-scroll
+      %button.navbar-toggle{:data =>{:target => "#bs-example-navbar-collapse-1", :toggle => "collapse"}, :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#page-top"}
+        Gefion Gaming
+        %i.fa.fa-gamepad
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li.hidden
+          %a{:href => "#page-top"}
+        %li.page-scroll
+          %a{:href => "#portfolio"} Spil
+        %li.page-scroll
+          %a{:href => "#about"} Næste gang
+        - if current_user
+          %li.dropdown.visible-sm.visible-md.visible-lg
+            %a#user-info-toggle
+              %i.fa.fa-facebook
+              = current_user.name
+              %i.fa.fa-chevron-down
+          %li.page-scroll.visible-xs
+            %a{:href => "#user-section"}
+              %i.fa.fa-facebook
+              = current_user.name
+          %li.alert-button
+            %a#alert-toggle
+              %i.fa.fa-bell
+        - else
+          %li.dropdown
+            = link_to "Log in", "/auth/facebook", id: "sign_in"
+        %li
+          - if current_user
+            = link_to "Log ud", signout_path, id: "sign_out"

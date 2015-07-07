@@ -12,7 +12,7 @@ class MainController < ApplicationController
       #@receipts = @alerts.first.receipts_for current_user
     end
 
-    @graph = Koala::Facebook::API.new('280813985423323|lhjk41XXweokQ69YCzaDR-JnWek')
+    @graph = Koala::Facebook::API.new(ENV['FB_TOKEN'])
 
     @event = @graph.get_object('957225767629260')
 

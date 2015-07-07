@@ -1,0 +1,14 @@
+= render 'main/navbar'
+= render 'main/sections/header'
+= render 'main/sections/games'
+= render 'main/sections/countdown'
+- if current_user
+  = render 'users/mobile_userinfo'
+  = render 'users/mobile_alerts'
+  = render 'main/teammodals'
+= render 'main/sections/footer'
+= render 'main/gamemodals'
+= render 'errors/error_message'
+
+
+
