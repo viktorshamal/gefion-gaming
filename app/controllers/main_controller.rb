@@ -20,6 +20,13 @@ class MainController < ApplicationController
     gon.eventid = @event['id']
     gon.fb_app_id = ENV['FB_APP_ID']
 
+    imgs = {}
+    Dir.chdir("#{Rails.root}/app/assets/images/game-images") do
+      imgs = Dir["**"].inject({}) {|h,f| h.merge! f => view_context.image_url('game-images/' + f)}
+    end
+
+    gon.imgs = imgs.to_json
+
     @attending = @graph.get_connections(gon.eventid, 'attending')
 
   end

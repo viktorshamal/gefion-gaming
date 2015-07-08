@@ -1,10 +1,4 @@
 $(document).ready(function (){
-    <%
-        imgs = {}
-        Dir.chdir("#{Rails.root}/app/assets/images/game-images") do
-        imgs = Dir["**"].inject({}) {|h,f| h.merge! f => image_url('game-images/' + f)}
-        end
-    %>
 
     localStorage.clear();
 
@@ -13,7 +7,7 @@ $(document).ready(function (){
     $(target).modal('show');
 
     window.image_url = function (name) {
-            return <%= imgs.to_json %>[name]
+            return gon.imgs[name]
     };
 
     window.getCover = function (cover){
