@@ -25,7 +25,7 @@ class MainController < ApplicationController
       imgs = Dir["**"].inject({}) {|h,f| h.merge! f => view_context.image_url('game-images/' + f)}
     end
 
-    gon.imgs = imgs.to_json
+    gon.imgs = imgs
 
     @attending = @graph.get_connections(gon.eventid, 'attending')
 
