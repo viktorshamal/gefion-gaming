@@ -9,7 +9,7 @@ jQuery ->
 window.fbAsyncInit = ->
 
   FB.init(
-    appId:'280813985423323',
+    appId: gon.fb_app_id,
     xfbml: false,
     cookie: true,
     status: true,

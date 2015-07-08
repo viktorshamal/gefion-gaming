@@ -1,2 +1,2 @@
-Challonge::API.username='sphinxo2985'
-Challonge::API.key='hPVTjVFyvecWttJZdSLQXBFfwrrfshrCZjEcFRTD'
+Challonge::API.username=ENV['CHALLONGE_USERNAME']
+Challonge::API.key=ENV['CHALLONGE_KEY']

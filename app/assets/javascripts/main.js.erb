@@ -1,10 +1,14 @@
-$(document).ready(function (){
-        <%
-            imgs = {}
-            Dir.chdir("#{Rails.root}/app/assets/images/game-images") do
-                imgs = Dir["**"].inject({}) {|h,f| h.merge! f => image_url('game-images/' + f)}
-            end
-        %>
+
+
+var ready;
+ready = function() {
+
+    <%
+        imgs = {}
+        Dir.chdir("#{Rails.root}/app/assets/images/game-images") do
+            imgs = Dir["**"].inject({}) {|h,f| h.merge! f => image_url('game-images/' + f)}
+        end
+    %>
 
     localStorage.clear();
 
@@ -114,7 +118,7 @@ $(document).ready(function (){
     });
 
     $('body').tooltip({
-            selector: '[data-tooltip=tooltip]'}
+                selector: '[data-tooltip=tooltip]'}
     );
 
 
@@ -170,20 +174,20 @@ $(document).ready(function (){
             ].join(''))
         }
     })
-        .on('typeahead:selected', function (e, datum) {
-            $('#team_id').val(datum.id);
-            if(datum.hasPass){
-                $('#join-team-modal').modal('hide');
-                $('#team-password-modal').modal('show')
-            }
-            else{
-                $('#join-team-modal').modal('hide');
-                $('#team-form').submit();
-            }
-        })
-        .on('typeahead:closed', function(e, d) {
-            $('#team-searcher').typeahead('open');
-        })
+            .on('typeahead:selected', function (e, datum) {
+                $('#team_id').val(datum.id);
+                if(datum.hasPass){
+                    $('#join-team-modal').modal('hide');
+                    $('#team-password-modal').modal('show')
+                }
+                else{
+                    $('#join-team-modal').modal('hide');
+                    $('#team-form').submit();
+                }
+            })
+            .on('typeahead:closed', function(e, d) {
+                $('#team-searcher').typeahead('open');
+            })
     ;
 
     $('#team-form').on('submit', function(){
@@ -197,7 +201,12 @@ $(document).ready(function (){
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-});
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
 
 
 

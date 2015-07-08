@@ -18,6 +18,7 @@ class MainController < ApplicationController
 
     gon.eventtime = @event['start_time']
     gon.eventid = @event['id']
+    gon.fb_app_id = ENV['FB_APP_ID']
 
     @attending = @graph.get_connections(gon.eventid, 'attending')
 
