@@ -6,48 +6,13 @@ $(document).ready(function (){
 
     $(target).modal('show');
 
-    console.log(gon.imgs['fifa-15-cover.jpg']);
-
     window.image_url = function (name) {
-            return gon.imgs[name]
+            return gon.cover_paths[name]
     };
 
     window.getCover = function (cover){
         return image_url(cover.getAttribute('data-name') + "-cover.jpg");
     };
-
-    setInterval(function(){updateTime()},1000);
-
-    function updateTime(){
-        var countdownToParty = countdown(Date.now(),new Date(gon.eventtime));
-        if (countdownToParty.value > 0){
-            $('#countdown-box').show();
-            $('.unit').each(function () {
-                var count = countdownToParty[$(this).data('count')];
-                var singular = $(this).data('singular');
-                var plural = $(this).data('plural');
-
-                $(this).find('h2').html(function () {
-                    return count;
-                });
-
-                $(this).find('p').html(function () {
-                    if (count == 1) {
-                        return singular;
-                    }
-                    else {
-                        return plural;
-                    }
-                });
-            });
-        }else if(countdownToParty.value < -36000000) {
-            $('#more-info').show();
-        }else{
-            $('#playing-now').show();
-        }
-
-    }
-    updateTime();
 
     $('.img-header').mousemove(function(e){
         var mousePosX = (e.pageX/$(window).width())*100;
@@ -128,10 +93,7 @@ $(document).ready(function (){
         "background-size": "cover"
     });
 
-    $('#user-info-toggle').popover('show');
-
     $(document).on("click", ".team-options", function() {
-        alert('hello');
         $('#menu-team-' + $(this).data('team') + '-options').removeClass("hidden");
         $('#menu-team-' + $(this).data('team')).addClass("hidden");
     });
@@ -140,17 +102,6 @@ $(document).ready(function (){
         $('#menu-team-' + $(this).data('team') + '-options').addClass("hidden");
         $('#menu-team-' + $(this).data('team')).removeClass("hidden");
     });
-
-    /*$( ".team-options" ).on( "click", function() {
-        alert('hello');
-        $('#menu-team-' + $(this).data('team') + '-options').removeClass("hidden");
-        $('#menu-team-' + $(this).data('team')).addClass("hidden");
-    });
-
-    $( ".team-options-back" ).on( "click", function() {
-        $('#menu-team-' + $(this).data('team') + '-options').addClass("hidden");
-        $('#menu-team-' + $(this).data('team')).removeClass("hidden");
-    });*/
 
     // Twitter typeahead exmaple.
 
