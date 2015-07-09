@@ -1,3 +1,5 @@
 == README
 
 This is the official repo of Gefion Gamings webpage. Built by sphinxo (Shamal).
+
+Thanks to startbootstrap for their freelancer theme, and everyone else for their useful gems.
