@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f88d0f83-9f50-4022-914d-cadf02b03a30" name="Default" comment="changed countdown to show when the previous event was held">
+    <list default="true" id="f88d0f83-9f50-4022-914d-cadf02b03a30" name="Default" comment="changed navbar item">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main/sections/_countdown.html.erb" afterPath="$PROJECT_DIR$/app/views/main/sections/_countdown.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main/_navbar.html.haml" afterPath="$PROJECT_DIR$/app/views/main/_navbar.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gaming.iws" />
@@ -62,20 +61,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_countdown.html.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_countdown.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/main/sections/_countdown.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-35.121952">
-              <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.67546177">
+              <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_navbar.html.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_navbar.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/main/_navbar.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4589161">
+            <state vertical-scroll-proportion="-15.441176">
               <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
               <folding />
             </state>
@@ -174,8 +173,8 @@
         <option value="$PROJECT_DIR$/README.rdoc" />
         <option value="$PROJECT_DIR$/app/controllers/main_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/time.js" />
-        <option value="$PROJECT_DIR$/app/views/main/sections/_countdown.html.erb" />
         <option value="$PROJECT_DIR$/app/views/main/_navbar.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/main/sections/_countdown.html.erb" />
       </list>
     </option>
   </component>
@@ -741,12 +740,6 @@
       <option name="number" value="Default" />
       <updated>1401085280308</updated>
     </task>
-    <task id="LOCAL-00016" summary="changed gemfile.lock">
-      <created>1425222645961</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1425222645961</updated>
-    </task>
     <task id="LOCAL-00017" summary="added turnattend model">
       <created>1425223389338</created>
       <option name="number" value="00017" />
@@ -1035,7 +1028,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436525104259</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="changed navbar item">
+      <created>1436525518224</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1436525518224</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1098,7 +1097,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="changed team signup" />
     <MESSAGE value="changed team signup icons" />
     <MESSAGE value="changed trn width&#10;" />
     <MESSAGE value="changed event..." />
@@ -1123,7 +1121,8 @@
     <MESSAGE value="updated readme" />
     <MESSAGE value="updated readme again and added github link" />
     <MESSAGE value="changed countdown to show when the previous event was held" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed countdown to show when the previous event was held" />
+    <MESSAGE value="changed navbar item" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed navbar item" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1482,18 +1481,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main/sections/_countdown.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/main/_navbar.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-35.121952">
-          <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+        <state vertical-scroll-proportion="-15.441176">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main/_navbar.html.haml">
+    <entry file="file://$PROJECT_DIR$/app/views/main/sections/_countdown.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4589161">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.67546177">
+          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
           <folding />
         </state>
       </provider>
