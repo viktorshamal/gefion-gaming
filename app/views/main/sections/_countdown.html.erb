@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2>Næste gang</h2>
+        <h2>Sidste gang</h2>
         <hr class="star-light star-about">
       </div>
     </div>
@@ -17,8 +17,8 @@
       </div>
     </div>
     <div id ='countdown-box' class="row" style="display: none">
-      <div class="col-lg-2 col-lg-2-offset"></div>
-      <% [%w(dag dage days), %w(time timer hours), %w(minut minutter minutes), %w(sekund sekunder seconds)].each do |unit| %>
+      <div class="col-lg-1 col-lg-1-offset"></div>
+      <% [%W(måned måneder months), %w(dag dage days), %w(time timer hours), %w(minut minutter minutes), %w(sekund sekunder seconds)].each do |unit| %>
           <div class="col-lg-2 text-center unit" data-count = '<%= unit[2] %>' data-singular = '<%= unit[0] %>' data-plural = '<%= unit[1] %>'>
             <h2></h2>
             <p></p>
@@ -43,7 +43,7 @@
           <label class="btn btn-lg btn-outline" id="attend-button-label" for="attend-button">Event</label>
         </form>
         <br/>
-        <p id="attending-list">Hvem kommer? <i class="fa fa-chevron-down"></i></p>
+        <p id="attending-list">Hvem var til stede? <i class="fa fa-chevron-down"></i></p>
       </div>
     </div>
   </div>

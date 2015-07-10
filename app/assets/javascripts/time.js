@@ -5,7 +5,7 @@ setInterval(function(){updateTime()},1000);
 
 function updateTime(){
     var countdownToParty = countdown(Date.now(),new Date(gon.eventtime));
-    if (countdownToParty.value > 0){
+    if (true){
         $('#countdown-box').show();
         $('.unit').each(function () {
             var count = countdownToParty[$(this).data('count')];
