@@ -21,6 +21,10 @@ p.small {
   font-size: 16px;
 }
 
+#real-games{
+  background-color: #7D5454;
+}
+
 #attending-list{
   padding-top: 20px;
   font-size:14px;
@@ -557,8 +561,36 @@ section.success {
   background: #18bc9c;
 }
 
-section.real-games {
-  background-color: black;
+section#real-games {
+  background-color: #7D5454;
+}
+
+section#real-games h2, h4 {
+  color: #232323;
+}
+
+section#real-games p {
+  text-transform: none;
+  margin-bottom: 50px;
+}
+
+section#real-games hr.star-primary {
+  border-color: #333;
+}
+
+section#real-games hr.star-primary:after {
+  color: #333;
+  background-color: #7D5454;
+}
+
+.board-game-button:hover{
+  background-color: #E07B3E;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.justify{
+  text-align: justify;
 }
 
 @media(max-width:767px) {
